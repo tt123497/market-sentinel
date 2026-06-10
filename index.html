@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>📡 股市哨兵 · AI全链+市场监控</title>
+<title>📡 LIVE · 股市哨兵</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -550,10 +550,35 @@ function go(tab){
   document.getElementById('mainContent').innerHTML=ov+rc+br+ch+ca+st;
 
       function loadLive(){
+      // Briefing from cloud
+      var bp=document.getElementById('panel-briefing');if(bp){
+        fetch('./data.json?t='+Date.now()).then(function(r){return r.json()}).then(function(d){
+          if(d.briefing){
+            var b=d.briefing;
+            var topNewsDiv=bp.querySelector('.section:first-child');
+            if(topNewsDiv&&b.top3){
+              var newsHtml='<div class="section-title">📰 云端实时简报</div>';
+              b.top3.forEach(function(n){
+                newsHtml+='<div class="news-card"><div class="n-head"><div class="n-rank r'+n.r+'">'+n.r+'</div><div class="n-title">'+n.t+'</div></div><div class="n-body">'+n.b+'</div><div class="n-pills">'+(n.s||[]).map(function(x){return '<span class="c-pill pick">'+x+'</span>';}).join('')+'</div></div>';
+              });
+              topNewsDiv.innerHTML=newsHtml;
+            }
+            var picksDiv=bp.querySelector('.section:last-child');
+            if(picksDiv&&b.picks){
+              var picksHtml='<div class="section-title">🎯 云端精选标的</div><div class="pick-row">';
+              b.picks.forEach(function(p){
+                picksHtml+='<div class="pick-item"><div class="pi-rank">#'+p.r+'</div><div class="pi-info"><div><span class="pi-name">'+p.n+'</span><span class="pi-code">'+p.c+'</span></div><div class="pi-reason">'+p.why+'</div></div><div class="pi-sector">'+p.sec+'</div></div>';
+              });
+              picksHtml+='</div>';
+              picksDiv.innerHTML=picksHtml;
+            }
+          }
+        }).catch(function(){});
+      }
         fetch('./data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
           if(d.updated){
             var lc=d.runtime?d.runtime.liveCount||49:49;
-            document.getElementById('updateBar').innerHTML='REALTIME <b>'+d.updated+'</b> | '+lc+' stocks tracking | auto-refresh 5min';
+            document.getElementById('updateBar').innerHTML='☁️ 云端实时 · <b>'+d.updated+'</b> | '+lc+'只标的 | 每15分钟自动刷新 | 电脑关机也能看';
           }
           if(d.livePrices){
             document.querySelectorAll('.tbl tbody tr').forEach(function(tr){
@@ -573,7 +598,7 @@ function go(tab){
           }
         }).catch(function(){});
       }
-      loadLive();setInterval(loadLive,300000);
+      loadLive();setInterval(loadLive,30000);
 
   // Dynamic data
   fetch('./data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
