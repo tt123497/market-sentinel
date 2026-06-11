@@ -642,6 +642,18 @@ function go(tab){
             if(wlHtml)sections[4].innerHTML=wlHtml;
           }
         }
+        // Calendar refresh
+        var cp=document.getElementById('panel-calendar');if(cp&&d.events){
+          var evtList=cp.querySelector('.evt-list');
+          if(evtList&&d.events.length){
+            var evHtml='';
+            d.events.forEach(function(e){
+              evHtml+='<div class="evt-row'+(e.big?' big':'')+'"><span class="evt-date">'+e.d+'</span><span class="evt-icon">'+e.icon+'</span><span class="evt-desc">'+e.e+(e.big?' <b style="color:var(--red);font-size:.7rem">⚡关键</b>':'')+'</span><span class="evt-sector">'+e.s+'</span></div>';
+            });
+            evtList.innerHTML=evHtml;
+          }
+        }
+
         // UpdateBar + LivePrices
         if(d.updated){
           var lc=d.runtime?d.runtime.liveCount||49:49;
