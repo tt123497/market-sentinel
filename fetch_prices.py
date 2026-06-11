@@ -152,7 +152,7 @@ def main():
     }
 
     # Preserve manual fields
-    for k in ['sectors', 'top3', 'picks', 'briefing', 'events']:
+    for k in ['sectors', 'top3', 'picks', 'briefing', 'events', 'layout']:
         if k in existing and existing[k]:
             out[k] = existing[k]
 
