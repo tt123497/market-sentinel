@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-12 04:49 CST",
+  "updated": "2026-06-12 05:05 CST",
   "nextSentinel": "今日 09:15 早盘哨兵",
-  "updateCount": 1979123,
+  "updateCount": 1979124,
   "recap": {
     "index": [
       {
@@ -220,7 +220,7 @@
         "stks": "688702 盛科通信 -1.2% / 000938 紫光股份 -2.2% / 301165 锐捷网络 -3.1% / 002396 星网锐捷 -4.9%"
       }
     ],
-    "note": "06/12 04:49 本地Sina实时 | 每15分钟"
+    "note": "06/12 05:05 本地Sina实时 | 每15分钟"
   },
   "livePrices": {
     "sz000063": {
@@ -870,54 +870,63 @@
     "interval": "15min",
     "stockCount": 129,
     "liveCount": 128,
-    "updateCount": 1979123,
+    "updateCount": 1979124,
     "trading": false
   },
   "sectors": [
     {
       "name": "六氟化钨",
       "sig": "major",
-      "msg": "价格年内暴涨190%+，全球缺口3300-3800吨，多公司澄清无大额实单，国产替代逻辑热炒"
+      "msg": "价格年内暴涨190%+，全球缺口3300-3800吨，多公司澄清无大额实单，国产替代逻辑热炒",
+      "u": "https://wap.stockstar.com/detail/IG2026060700004015"
     },
     {
       "name": "玻璃基板",
       "sig": "major",
-      "msg": "台积电CoPoS试产线建成明确放量时点，板块单周涨超10%，8只标的翻倍，设备类最先兑现"
+      "msg": "台积电CoPoS试产线建成明确放量时点，板块单周涨超10%，8只标的翻倍，设备类最先兑现",
+      "u": "https://stcn.com/article/detail/3947700.html"
     },
     {
       "name": "6G",
       "sig": "major",
-      "msg": "工信部6/4发布部省协同试点通知，6/5批量涨停，2029年商用路线图明确"
+      "msg": "工信部6/4发布部省协同试点通知，6/5批量涨停，2029年商用路线图明确",
+      "u": "https://finance.eastmoney.com/a/202606053761726922.html"
     },
     {
       "name": "人形机器人",
       "sig": "major",
-      "msg": "宇树科技IPO过会启动注册，两部委推万台级规模落地，绿的谐波涨停创新高"
+      "msg": "宇树科技IPO过会启动注册，两部委推万台级规模落地，绿的谐波涨停创新高",
+      "u": "https://finance.eastmoney.com/a/202606093765125951.html"
     },
     {
       "name": "商业航天",
       "sig": "major",
-      "msg": "SpaceX今日6/12纳斯达克IPO，估值1.75万亿，超2500亿认购，A股航天ETF对标重估"
+      "msg": "SpaceX今日6/12纳斯达克IPO，估值1.75万亿，超2500亿认购，A股航天ETF对标重估",
+      "u": "https://m.nbd.com.cn/articles/2026-06-09/4420985.html"
     },
     {
       "name": "固态电池",
       "sig": "good",
-      "msg": "万吨级氧化物固态电解质产线投产，豪鹏科技950Wh/L半固态批量供货，6/9板块涨3.1%"
+      "msg": "万吨级氧化物固态电解质产线投产，豪鹏科技950Wh/L半固态批量供货，6/9板块涨3.1%",
+      "u": "https://finance.eastmoney.com/a/202606103766923314.html"
     },
     {
       "name": "低空经济",
       "sig": "major",
-      "msg": "峰飞航空获全球首张eVTOL海外适航证，沃兰特完成国内首次有人驾驶转换飞行+10亿融资"
+      "msg": "峰飞航空获全球首张eVTOL海外适航证，沃兰特完成国内首次有人驾驶转换飞行+10亿融资",
+      "u": "https://news.cctv.com/2026/06/08/ARTI0HlMBNQ6CE8Ji2a32otp260608.shtml"
     },
     {
       "name": "存储芯片",
       "sig": "neutral",
-      "msg": "AI超级周期高位震荡，6/5暴跌后快速修复，HBM缺口50-60%，Q2见顶担忧+股东减持成隐忧"
+      "msg": "AI超级周期高位震荡，6/5暴跌后快速修复，HBM缺口50-60%，Q2见顶担忧+股东减持成隐忧",
+      "u": "https://fund.eastmoney.com/a/202606113768302535.html"
     },
     {
       "name": "钨稀土",
       "sig": "major",
-      "msg": "六氟化钨年初至今涨232%，矿产资源法6/15施行，章源钨业/金钼股份等6/11集体涨停"
+      "msg": "六氟化钨年初至今涨232%，矿产资源法6/15施行，章源钨业/金钼股份等6/11集体涨停",
+      "u": "https://www.jiemian.com/article/14570496.html"
     }
   ],
   "top3": [
@@ -964,35 +973,40 @@
       "c": "300136",
       "n": "信维通信",
       "why": "SpaceX星链地面终端核心供应商，直接受益于SpaceX IPO估值重估",
-      "sec": "商业航天"
+      "sec": "商业航天",
+      "u": "https://www.21jingji.com/article/20260610/herald/07f46b3bb9f03a61c72ea9c70cbed52a.html"
     },
     {
       "r": 2,
       "c": "688017",
       "n": "绿的谐波",
       "why": "谐波减速器绝对龙头，宇树/特斯拉双供应链核心，涨停创新高",
-      "sec": "人形机器人"
+      "sec": "人形机器人",
+      "u": "https://stcn.com/article/detail/3945688.html"
     },
     {
       "r": 3,
       "c": "688146",
       "n": "中船特气",
       "why": "六氟化钨全球产能第一(2000吨)，年内涨7倍，调价机制加速至月度",
-      "sec": "六氟化钨"
+      "sec": "六氟化钨",
+      "u": "https://wap.stockstar.com/detail/IG2026060700004015"
     },
     {
       "r": 4,
       "c": "002008",
       "n": "大族激光",
       "why": "TGV晶圆级设备龙头，台积电CoPoS放量直接受益，股价破历史新高",
-      "sec": "玻璃基板"
+      "sec": "玻璃基板",
+      "u": "https://stcn.com/article/detail/3947700.html"
     },
     {
       "r": 5,
       "c": "600498",
       "n": "烽火通信",
       "why": "6G政策直接催化，6/5涨停，光通信+6G双主线受益",
-      "sec": "6G"
+      "sec": "6G",
+      "u": "https://finance.eastmoney.com/a/202606053761726922.html"
     }
   ],
   "briefing": {
@@ -1041,35 +1055,40 @@
         "c": "300136",
         "n": "信维通信",
         "why": "SpaceX星链地面终端核心供应商，直接受益于SpaceX IPO估值重估",
-        "sec": "商业航天"
+        "sec": "商业航天",
+        "u": "https://www.21jingji.com/article/20260610/herald/07f46b3bb9f03a61c72ea9c70cbed52a.html"
       },
       {
         "r": 2,
         "c": "688017",
         "n": "绿的谐波",
         "why": "谐波减速器绝对龙头，宇树/特斯拉双供应链核心，涨停创新高",
-        "sec": "人形机器人"
+        "sec": "人形机器人",
+        "u": "https://stcn.com/article/detail/3945688.html"
       },
       {
         "r": 3,
         "c": "688146",
         "n": "中船特气",
         "why": "六氟化钨全球产能第一(2000吨)，年内涨7倍，调价机制加速至月度",
-        "sec": "六氟化钨"
+        "sec": "六氟化钨",
+        "u": "https://wap.stockstar.com/detail/IG2026060700004015"
       },
       {
         "r": 4,
         "c": "002008",
         "n": "大族激光",
         "why": "TGV晶圆级设备龙头，台积电CoPoS放量直接受益，股价破历史新高",
-        "sec": "玻璃基板"
+        "sec": "玻璃基板",
+        "u": "https://stcn.com/article/detail/3947700.html"
       },
       {
         "r": 5,
         "c": "600498",
         "n": "烽火通信",
         "why": "6G政策直接催化，6/5涨停，光通信+6G双主线受益",
-        "sec": "6G"
+        "sec": "6G",
+        "u": "https://finance.eastmoney.com/a/202606053761726922.html"
       }
     ]
   },
