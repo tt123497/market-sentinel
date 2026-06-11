@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-11 23:00 CST",
+  "updated": "2026-06-11 23:07 CST",
   "nextSentinel": "下个交易日 9:15 开盘扫描",
   "updateCount": 1979100,
   "recap": {
@@ -7,7 +7,7 @@
     "heat": [],
     "winners": [],
     "losers": [],
-    "note": "06/11 23:00 GitHub Actions云更新 | 每15分钟"
+    "note": "06/11 23:07 GitHub Actions云更新 | 每15分钟"
   },
   "livePrices": {},
   "runtime": {
@@ -18,10 +18,5 @@
     "liveCount": 0,
     "updateCount": 1979100,
     "trading": false
-  },
-  "briefing": {
-    "updated": "2026-06-11 23:05 CST",
-    "top3": [],
-    "picks": []
   }
 }
