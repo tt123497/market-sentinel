@@ -83,6 +83,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .news-card .n-rank.r2{background:var(--grad1)}
 .news-card .n-rank.r3{background:linear-gradient(135deg,#8b5cf6,#a855f7)}
 .news-card .n-title{font-size:1.08rem;font-weight:600}
+.news-card .n-title a{color:var(--text);text-decoration:none}
+.news-card .n-title a:hover{color:var(--blue);text-decoration:underline}
+.news-card .n-link{display:inline-block;margin-top:6px;font-size:.72rem;color:var(--blue);text-decoration:none}
+.news-card .n-link:hover{text-decoration:underline}
 .news-card .n-body{font-size:1.08rem;color:var(--sub);line-height:1.6;margin-bottom:8px}
 .news-card .n-pills{display:flex;flex-wrap:wrap;gap:5px}
 
@@ -557,7 +561,7 @@ function go(tab){
 // ════ BRIEFING ════
   let br=`<div class="tab-panel" id="panel-briefing">
     <div class="section"><div class="section-title">📰 今日最重要的消息</div>`;
-  D.top3.forEach(n=>{br+=`<div class="news-card"><div class="n-head"><div class="n-rank r${n.r}">${n.r}</div><div class="n-title">${n.t}</div></div><div class="n-body">${n.b}</div><div class="n-pills">${n.s.map(x=>`<span class="c-pill pick">${x}</span>`).join('')}</div></div>`;});
+  D.top3.forEach(n=>{let link=n.u?'<a class="n-link" href="'+n.u+'" target="_blank" rel="noopener">🔗 查看原文</a>':'';br+=`<div class="news-card"><div class="n-head"><div class="n-rank r${n.r}">${n.r}</div><div class="n-title">${n.u?'<a href="'+n.u+'" target="_blank" rel="noopener">'+n.t+'</a>':n.t}</div></div><div class="n-body">${n.b}</div>${link}<div class="n-pills">${n.s.map(x=>`<span class="c-pill pick">${x}</span>`).join('')}</div></div>`;});
   br+=`</div><div class="section"><div class="section-title">🎯 精选标的 Top ${D.picks.length}</div><div class="pick-row">`;
   D.picks.forEach(p=>{br+=`<div class="pick-item"><div class="pi-rank">#${p.r}</div><div class="pi-info"><div><span class="pi-name">${p.n}</span><span class="pi-code">${p.c}</span></div><div class="pi-reason">${p.why}</div></div><div class="pi-sector">${p.sec}</div></div>`;});
   br+=`</div></div></div>`;
@@ -596,7 +600,9 @@ function go(tab){
           if(topNewsDiv&&b.top3&&b.top3.length){
             var newsHtml='<div class="section-title">📰 云端实时简报</div>';
             b.top3.forEach(function(n){
-              newsHtml+='<div class="news-card"><div class="n-head"><div class="n-rank r'+n.r+'">'+n.r+'</div><div class="n-title">'+n.t+'</div></div><div class="n-body">'+n.b+'</div><div class="n-pills">'+(n.s||[]).map(function(x){return '<span class="c-pill pick">'+x+'</span>';}).join('')+'</div></div>';
+              var titleHtml=n.u?'<a href="'+n.u+'" target="_blank" rel="noopener">'+n.t+'</a>':n.t;
+              var linkHtml=n.u?'<a class="n-link" href="'+n.u+'" target="_blank" rel="noopener">🔗 查看原文</a>':'';
+              newsHtml+='<div class="news-card"><div class="n-head"><div class="n-rank r'+n.r+'">'+n.r+'</div><div class="n-title">'+titleHtml+'</div></div><div class="n-body">'+n.b+'</div>'+linkHtml+'<div class="n-pills">'+(n.s||[]).map(function(x){return '<span class="c-pill pick">'+x+'</span>';}).join('')+'</div></div>';
             });
             topNewsDiv.innerHTML=newsHtml;
           }
