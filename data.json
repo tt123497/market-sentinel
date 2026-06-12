@@ -1,7 +1,7 @@
 {
-  "updated": "2026-06-12 09:12 CST",
+  "updated": "2026-06-12 09:17 CST",
   "nextSentinel": "今日 09:15 早盘哨兵",
-  "updateCount": 1979140,
+  "updateCount": 1979141,
   "recap": {
     "index": [
       {
@@ -45,277 +45,277 @@
     "flow": [],
     "winners": [],
     "losers": [],
-    "note": "06/12 09:12 东财全源 | 191只 | 0板块"
+    "note": "06/12 09:17 东财全源 | 191只 | 0板块"
   },
   "livePrices": {
     "sz000063": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 38.01,
+      "chg_pct": 0.53,
       "name": "中兴通讯"
     },
     "sz000070": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 17.7,
+      "chg_pct": 0.17,
       "name": "特发信息"
     },
     "sz000099": {
-      "price": 0,
+      "price": 15.83,
       "chg_pct": 0,
       "name": "中信海直"
     },
     "sz000301": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 11.82,
+      "chg_pct": 1.81,
       "name": "东方盛虹"
     },
     "sz000636": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 67.0,
+      "chg_pct": 4.2,
       "name": "风华高科"
     },
     "sz000657": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 80.0,
+      "chg_pct": 2.63,
       "name": "中钨高新"
     },
     "sz000725": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 5.99,
+      "chg_pct": 2.74,
       "name": "京东方Ａ"
     },
     "sz000823": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 19.19,
+      "chg_pct": 0.47,
       "name": "超声电子"
     },
     "sz000938": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 25.6,
+      "chg_pct": 1.23,
       "name": "紫光股份"
     },
     "sz000962": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 59.0,
+      "chg_pct": 1.86,
       "name": "东方钽业"
     },
     "sz000977": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 58.52,
+      "chg_pct": 1.18,
       "name": "浪潮信息"
     },
     "sz000988": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 153.5,
+      "chg_pct": 2.16,
       "name": "华工科技"
     },
     "sz001309": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 661.35,
+      "chg_pct": 4.59,
       "name": "德明利"
     },
     "sz002008": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 125.0,
+      "chg_pct": 2.92,
       "name": "大族激光"
     },
     "sz002011": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 10.74,
+      "chg_pct": 1.03,
       "name": "盾安环境"
     },
     "sz002025": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 66.1,
+      "chg_pct": 0.06,
       "name": "航天电器"
     },
     "sz002046": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 59.0,
+      "chg_pct": 2.2,
       "name": "国机精工"
     },
     "sz002050": {
-      "price": 0,
+      "price": 45.69,
       "chg_pct": 0,
       "name": "三花智控"
     },
     "sz002055": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 6.03,
+      "chg_pct": 4.15,
       "name": "ST得润"
     },
     "sz002074": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 28.66,
+      "chg_pct": 1.09,
       "name": "国轩高科"
     },
     "sz002085": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 12.36,
+      "chg_pct": 0.08,
       "name": "万丰奥威"
     },
     "sz002129": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 10.24,
+      "chg_pct": 1.09,
       "name": "TCL中环"
     },
     "sz002130": {
-      "price": 0,
+      "price": 18.66,
       "chg_pct": 0,
       "name": "沃尔核材"
     },
     "sz002134": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 29.0,
+      "chg_pct": 2.0,
       "name": "天津普林"
     },
     "sz002136": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 12.18,
+      "chg_pct": 0.5,
       "name": "安 纳 达"
     },
     "sz002156": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 61.58,
+      "chg_pct": 2.48,
       "name": "通富微电"
     },
     "sz002158": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 27.15,
+      "chg_pct": 0.44,
       "name": "汉钟精机"
     },
     "sz002171": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 13.1,
+      "chg_pct": 1.71,
       "name": "楚江新材"
     },
     "sz002180": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 14.2,
+      "chg_pct": -1.53,
       "name": "奔图科技"
     },
     "sz002185": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 17.75,
+      "chg_pct": 5.97,
       "name": "华天科技"
     },
     "sz002194": {
-      "price": 0,
+      "price": 11.3,
       "chg_pct": 0,
       "name": "武汉凡谷"
     },
     "sz002201": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 12.29,
+      "chg_pct": 9.24,
       "name": "九鼎新材"
     },
     "sz002203": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 23.44,
+      "chg_pct": 10.0,
       "name": "海亮股份"
     },
     "sz002230": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 40.81,
+      "chg_pct": 0.05,
       "name": "科大讯飞"
     },
     "sz002236": {
-      "price": 0,
+      "price": 15.84,
       "chg_pct": 0,
       "name": "大华股份"
     },
     "sz002241": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 23.37,
+      "chg_pct": 2.86,
       "name": "歌尔股份"
     },
     "sz002281": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 209.8,
+      "chg_pct": 2.14,
       "name": "光迅科技"
     },
     "sz002297": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 22.0,
+      "chg_pct": 2.85,
       "name": "博云新材"
     },
     "sz002335": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 36.17,
+      "chg_pct": 2.26,
       "name": "科华数据"
     },
     "sz002354": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 7.18,
+      "chg_pct": -10.03,
       "name": "天娱数科"
     },
     "sz002361": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 16.6,
+      "chg_pct": -4.98,
       "name": "神剑股份"
     },
     "sz002371": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 650.25,
+      "chg_pct": 2.0,
       "name": "北方华创"
     },
     "sz002396": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 17.51,
+      "chg_pct": -2.01,
       "name": "星网锐捷"
     },
     "sz002402": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 23.52,
+      "chg_pct": -1.42,
       "name": "和而泰"
     },
     "sz002409": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 140.0,
+      "chg_pct": 3.85,
       "name": "雅克科技"
     },
     "sz002415": {
-      "price": 0,
+      "price": 29.98,
       "chg_pct": 0,
       "name": "海康威视"
     },
     "sz002436": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 37.5,
+      "chg_pct": 2.04,
       "name": "兴森科技"
     },
     "sz002446": {
-      "price": 0,
+      "price": 10.78,
       "chg_pct": 0,
       "name": "盛路通信"
     },
     "sz002460": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 70.9,
+      "chg_pct": 1.37,
       "name": "赣锋锂业"
     },
     "sz002463": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 130.0,
+      "chg_pct": 2.43,
       "name": "沪电股份"
     },
     "sz002472": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 41.09,
+      "chg_pct": 0.02,
       "name": "双环传动"
     },
     "sz002475": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 65.4,
+      "chg_pct": 1.27,
       "name": "立讯精密"
     },
     "sz002484": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 84.86,
+      "chg_pct": 2.49,
       "name": "江海股份"
     },
     "sz002491": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 24.5,
+      "chg_pct": 1.83,
       "name": "通鼎互联"
     },
     "sz002529": {
@@ -324,663 +324,663 @@
       "name": "*ST海源"
     },
     "sz002636": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 76.32,
+      "chg_pct": -10.0,
       "name": "金安国纪"
     },
     "sz002643": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 15.98,
+      "chg_pct": 3.36,
       "name": "万润股份"
     },
     "sz002669": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 16.1,
+      "chg_pct": -6.5,
       "name": "康达新材"
     },
     "sz002709": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 49.21,
+      "chg_pct": 1.55,
       "name": "天赐材料"
     },
     "sz002747": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 33.36,
+      "chg_pct": 0.03,
       "name": "埃斯顿"
     },
     "sz002768": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 69.25,
+      "chg_pct": 3.37,
       "name": "国恩股份"
     },
     "sz002837": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 68.06,
+      "chg_pct": 1.37,
       "name": "英维克"
     },
     "sz002842": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 43.27,
+      "chg_pct": 9.99,
       "name": "翔鹭钨业"
     },
     "sz002851": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 145.8,
+      "chg_pct": 4.58,
       "name": "麦格米特"
     },
     "sz002859": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 77.8,
+      "chg_pct": -0.27,
       "name": "洁美科技"
     },
     "sz002861": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 18.0,
+      "chg_pct": -0.55,
       "name": "瀛通通讯"
     },
     "sz002897": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 81.0,
+      "chg_pct": 1.07,
       "name": "意华股份"
     },
     "sz002915": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 22.03,
+      "chg_pct": 0.05,
       "name": "中欣氟材"
     },
     "sz002916": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 384.0,
+      "chg_pct": 2.08,
       "name": "深南电路"
     },
     "sz002938": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 108.11,
+      "chg_pct": 2.47,
       "name": "鹏鼎控股"
     },
     "sz003026": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 35.22,
+      "chg_pct": -0.65,
       "name": "中晶科技"
     },
     "sz300034": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 16.95,
+      "chg_pct": 2.42,
       "name": "钢研高纳"
     },
     "sz300136": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 103.8,
+      "chg_pct": 4.55,
       "name": "信维通信"
     },
     "sz300179": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 42.58,
+      "chg_pct": 3.1,
       "name": "四方达"
     },
     "sz300221": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 16.15,
+      "chg_pct": 0.19,
       "name": "银禧科技"
     },
     "sz300236": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 106.98,
+      "chg_pct": 4.86,
       "name": "上海新阳"
     },
     "sz300285": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 64.85,
+      "chg_pct": 3.93,
       "name": "国瓷材料"
     },
     "sz300308": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 1159.98,
+      "chg_pct": 3.2,
       "name": "中际旭创"
     },
     "sz300342": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 51.0,
+      "chg_pct": 1.47,
       "name": "天银机电"
     },
     "sz300346": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 68.57,
+      "chg_pct": 2.79,
       "name": "南大光电"
     },
     "sz300394": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 303.0,
+      "chg_pct": 3.06,
       "name": "天孚通信"
     },
     "sz300408": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 132.5,
+      "chg_pct": 0.66,
       "name": "三环集团"
     },
     "sz300442": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 75.48,
+      "chg_pct": 1.97,
       "name": "润泽科技"
     },
     "sz300450": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 41.88,
+      "chg_pct": 0.26,
       "name": "先导智能"
     },
     "sz300474": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 52.4,
+      "chg_pct": 1.55,
       "name": "景嘉微"
     },
     "sz300476": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 335.06,
+      "chg_pct": 2.94,
       "name": "胜宏科技"
     },
     "sz300499": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 36.0,
+      "chg_pct": 4.65,
       "name": "高澜股份"
     },
     "sz300502": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 533.01,
+      "chg_pct": 1.33,
       "name": "新易盛"
     },
     "sz300570": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 175.58,
+      "chg_pct": -1.13,
       "name": "太辰光"
     },
     "sz300624": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 52.12,
+      "chg_pct": 0.73,
       "name": "万兴科技"
     },
     "sz300655": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 16.75,
+      "chg_pct": 4.43,
       "name": "晶瑞电材"
     },
     "sz300699": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 27.5,
+      "chg_pct": 0.77,
       "name": "光威复材"
     },
     "sz300738": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 19.98,
+      "chg_pct": 5.44,
       "name": "奥飞数据"
     },
     "sz300750": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 387.4,
+      "chg_pct": 1.36,
       "name": "宁德时代"
     },
     "sz300776": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 149.01,
+      "chg_pct": 1.51,
       "name": "帝尔激光"
     },
     "sz301013": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 59.5,
+      "chg_pct": 2.13,
       "name": "利和兴"
     },
     "sz301018": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 101.0,
+      "chg_pct": 3.49,
       "name": "申菱环境"
     },
     "sz301071": {
-      "price": 0,
+      "price": 70.7,
       "chg_pct": 0,
       "name": "力量钻石"
     },
     "sz301165": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 56.68,
+      "chg_pct": -0.04,
       "name": "锐捷网络"
     },
     "sz301217": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 131.98,
+      "chg_pct": 3.13,
       "name": "铜冠铜箔"
     },
     "sz301308": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 550.0,
+      "chg_pct": 6.84,
       "name": "江波龙"
     },
     "sz301313": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 56.0,
+      "chg_pct": 0.7,
       "name": "凡拓数创"
     },
     "sz301511": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 138.0,
+      "chg_pct": 3.32,
       "name": "德福科技"
     },
     "sh600038": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 27.3,
+      "chg_pct": 0.18,
       "name": "中直股份"
     },
     "sh600105": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 53.8,
+      "chg_pct": 2.81,
       "name": "永鼎股份"
     },
     "sh600110": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 12.41,
+      "chg_pct": 1.55,
       "name": "诺德股份"
     },
     "sh600118": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 79.03,
+      "chg_pct": 1.28,
       "name": "中国卫星"
     },
     "sh600172": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 11.83,
+      "chg_pct": 0.08,
       "name": "黄河旋风"
     },
     "sh600183": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 153.0,
+      "chg_pct": 2.18,
       "name": "生益科技"
     },
     "sh600345": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 59.5,
+      "chg_pct": 4.37,
       "name": "长江通信"
     },
     "sh600346": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 16.28,
+      "chg_pct": -0.06,
       "name": "恒力石化"
     },
     "sh600348": {
-      "price": 0,
+      "price": 9.01,
       "chg_pct": 0,
       "name": "华阳股份"
     },
     "sh600362": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 41.14,
+      "chg_pct": 2.49,
       "name": "江西铜业"
     },
     "sh600378": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 65.43,
+      "chg_pct": 3.04,
       "name": "XD昊华科"
     },
     "sh600391": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 31.13,
+      "chg_pct": -2.2,
       "name": "航发科技"
     },
     "sh600456": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 28.68,
+      "chg_pct": 0.28,
       "name": "宝钛股份"
     },
     "sh600460": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 34.2,
+      "chg_pct": 3.07,
       "name": "士兰微"
     },
     "sh600481": {
-      "price": 0,
+      "price": 5.16,
       "chg_pct": 0,
       "name": "双良节能"
     },
     "sh600487": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 106.0,
+      "chg_pct": 3.52,
       "name": "亨通光电"
     },
     "sh600498": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 67.0,
+      "chg_pct": 9.85,
       "name": "烽火通信"
     },
     "sh600500": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 7.93,
+      "chg_pct": 9.99,
       "name": "中化国际"
     },
     "sh600509": {
-      "price": 0,
+      "price": 8.03,
       "chg_pct": 0,
       "name": "天富能源"
     },
     "sh600522": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 50.46,
+      "chg_pct": 2.42,
       "name": "中天科技"
     },
     "sh600549": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 70.0,
+      "chg_pct": 3.8,
       "name": "厦门钨业"
     },
     "sh600552": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 21.0,
+      "chg_pct": 1.99,
       "name": "凯盛科技"
     },
     "sh600570": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 20.89,
+      "chg_pct": -0.62,
       "name": "恒生电子"
     },
     "sh600580": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 34.8,
+      "chg_pct": -0.09,
       "name": "卧龙电驱"
     },
     "sh600584": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 76.08,
+      "chg_pct": 5.74,
       "name": "长电科技"
     },
     "sh600673": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 33.64,
+      "chg_pct": 1.51,
       "name": "东阳光"
     },
     "sh600703": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 13.73,
+      "chg_pct": -10.03,
       "name": "三安光电"
     },
     "sh600707": {
-      "price": 0,
+      "price": 10.61,
       "chg_pct": 0,
       "name": "彩虹股份"
     },
     "sh600835": {
-      "price": 0,
+      "price": 19.8,
       "chg_pct": 0,
       "name": "上海机电"
     },
     "sh600873": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 8.69,
+      "chg_pct": -0.46,
       "name": "梅花生物"
     },
     "sh600893": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 38.64,
+      "chg_pct": 1.18,
       "name": "航发动力"
     },
     "sh601012": {
-      "price": 0,
+      "price": 13.64,
       "chg_pct": 0,
       "name": "隆基绿能"
     },
     "sh601138": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 70.9,
+      "chg_pct": 1.99,
       "name": "工业富联"
     },
     "sh601208": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 63.2,
+      "chg_pct": 2.4,
       "name": "东材科技"
     },
     "sh601216": {
-      "price": 0,
+      "price": 5.04,
       "chg_pct": 0,
       "name": "君正集团"
     },
     "sh601689": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 62.01,
+      "chg_pct": 1.03,
       "name": "拓普集团"
     },
     "sh601698": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 32.6,
+      "chg_pct": 2.03,
       "name": "中国卫通"
     },
     "sh601727": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 7.01,
+      "chg_pct": -1.13,
       "name": "上海电气"
     },
     "sh601869": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 456.51,
+      "chg_pct": 3.16,
       "name": "长飞光纤"
     },
     "sh601899": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 28.14,
+      "chg_pct": 2.96,
       "name": "紫金矿业"
     },
     "sh603002": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 17.93,
+      "chg_pct": 0.22,
       "name": "XD宏昌电"
     },
     "sh603019": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 82.2,
+      "chg_pct": 1.02,
       "name": "中科曙光"
     },
     "sh603185": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 17.99,
+      "chg_pct": 0.9,
       "name": "弘元绿能"
     },
     "sh603186": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 173.0,
+      "chg_pct": 1.54,
       "name": "华正新材"
     },
     "sh603228": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 78.79,
+      "chg_pct": 3.94,
       "name": "景旺电子"
     },
     "sh603267": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 68.71,
+      "chg_pct": 3.01,
       "name": "鸿远电子"
     },
     "sh603296": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 106.47,
+      "chg_pct": 1.61,
       "name": "华勤技术"
     },
     "sh603501": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 86.99,
+      "chg_pct": 2.14,
       "name": "豪威集团"
     },
     "sh603639": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 10.79,
+      "chg_pct": -0.09,
       "name": "海利尔"
     },
     "sh603650": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 66.8,
+      "chg_pct": 3.89,
       "name": "彤程新材"
     },
     "sh603678": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 65.0,
+      "chg_pct": 4.99,
       "name": "火炬电子"
     },
     "sh603773": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 125.51,
+      "chg_pct": -10.0,
       "name": "沃格光电"
     },
     "sh603859": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 46.7,
+      "chg_pct": -10.0,
       "name": "能科科技"
     },
     "sh603881": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 31.68,
+      "chg_pct": 1.57,
       "name": "数据港"
     },
     "sh603936": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 26.0,
+      "chg_pct": 9.61,
       "name": "博敏电子"
     },
     "sh603986": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 500.0,
+      "chg_pct": 3.41,
       "name": "兆易创新"
     },
     "sh605358": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 73.3,
+      "chg_pct": 2.99,
       "name": "立昂微"
     },
     "sh605376": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 183.1,
+      "chg_pct": 1.16,
       "name": "博迁新材"
     },
     "sh605589": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 58.55,
+      "chg_pct": -2.98,
       "name": "XD圣泉集"
     },
     "sh688008": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 241.77,
+      "chg_pct": 5.71,
       "name": "澜起科技"
     },
     "sh688012": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 318.2,
+      "chg_pct": 4.97,
       "name": "中微公司"
     },
     "sh688017": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 375.0,
+      "chg_pct": 2.18,
       "name": "绿的谐波"
     },
     "sh688028": {
-      "price": 0,
+      "price": 103.0,
       "chg_pct": 0,
       "name": "沃尔德"
     },
     "sh688041": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 298.0,
+      "chg_pct": 2.82,
       "name": "海光信息"
     },
     "sh688047": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 139.03,
+      "chg_pct": 2.46,
       "name": "龙芯中科"
     },
     "sh688052": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 240.35,
+      "chg_pct": 1.28,
       "name": "纳芯微"
     },
     "sh688072": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 700.0,
+      "chg_pct": 6.83,
       "name": "拓荆科技"
     },
     "sh688082": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 308.0,
+      "chg_pct": 8.45,
       "name": "盛美上海"
     },
     "sh688122": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 53.75,
+      "chg_pct": 0.09,
       "name": "西部超导"
     },
     "sh688126": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 34.0,
+      "chg_pct": 4.62,
       "name": "沪硅产业"
     },
     "sh688146": {
-      "price": 0,
+      "price": 349.8,
       "chg_pct": 0,
       "name": "中船特气"
     },
     "sh688256": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 1245.0,
+      "chg_pct": 2.09,
       "name": "寒武纪"
     },
     "sh688295": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 50.7,
+      "chg_pct": 1.36,
       "name": "中复神鹰"
     },
     "sh688362": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 66.48,
+      "chg_pct": 3.89,
       "name": "甬矽电子"
     },
     "sh688368": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 185.0,
+      "chg_pct": -1.43,
       "name": "晶丰明源"
     },
     "sh688388": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 53.73,
+      "chg_pct": 3.03,
       "name": "嘉元科技"
     },
     "sh688498": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 1490.0,
+      "chg_pct": 2.62,
       "name": "源杰科技"
     },
     "sh688525": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 348.88,
+      "chg_pct": 7.59,
       "name": "佰维存储"
     },
     "sh688595": {
-      "price": 0,
+      "price": 36.41,
       "chg_pct": 0,
       "name": "芯海科技"
     },
     "sh688629": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 145.48,
+      "chg_pct": 2.45,
       "name": "华丰科技"
     },
     "sh688702": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 270.0,
+      "chg_pct": 2.22,
       "name": "盛科通信-U"
     },
     "sh688766": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 460.01,
+      "chg_pct": 18.69,
       "name": "普冉股份"
     },
     "sh688802": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 725.0,
+      "chg_pct": 1.83,
       "name": "沐曦股份-U"
     },
     "sh688808": {
-      "price": 0,
-      "chg_pct": 0,
+      "price": 2298.0,
+      "chg_pct": 4.36,
       "name": "联讯仪器"
     },
     "sh838165": {
@@ -1010,7 +1010,7 @@
     "interval": "5min",
     "stockCount": 191,
     "liveCount": 191,
-    "updateCount": 1979140,
+    "updateCount": 1979141,
     "trading": true
   },
   "sectors": [
