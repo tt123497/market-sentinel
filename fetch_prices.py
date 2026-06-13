@@ -263,7 +263,7 @@ def main():
         lab = '中等风险' if risk == 'medium' else '较低风险' if risk == 'low' else '高风险'
         sug = '可积极布局' if avg_chg > 0.3 else '精选个股为主' if avg_chg >= -0.3 else '控制仓位等待信号' if avg_chg >= -1.5 else '现金为王等待企稳'
         out['recap']['cycle'] = {'phase': phase, 'phaseIcon': icon, 'signals': [f'指数均涨{avg_chg:+.1f}%'], 'riskLevel': risk, 'riskLabel': lab, 'suggestion': sug}
-    for k in ['sectors', 'top3', 'picks', 'briefing', 'events', 'layout', 'extraCodes', 'bHistory', 'concepts']:
+    for k in ['sectors', 'top3', 'picks', 'briefing', 'events', 'layout', 'extraCodes', 'bHistory', 'concepts', 'dynamicSectors']:
         if k in existing and existing[k]: out[k] = existing[k]
 
     with open(DATA_PATH, 'w', encoding='utf-8') as f:

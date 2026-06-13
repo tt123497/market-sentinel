@@ -384,7 +384,7 @@ def main():
 
     # Preserve manually-curated fields from existing data.json (12h freshness window)
     preserve = {}
-    preserve_keys = ['sectors', 'top3', 'picks', 'briefing', 'events', 'layout', 'bHistory', 'concepts']
+    preserve_keys = ['sectors', 'top3', 'picks', 'briefing', 'events', 'layout', 'bHistory', 'concepts', 'dynamicSectors']
     old_cycle = None
     old_briefing_date = ''
     if os.path.exists(DATA_PATH):
