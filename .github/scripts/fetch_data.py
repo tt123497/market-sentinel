@@ -408,9 +408,13 @@ def main():
         auto_sec = auto_sectors(sectors, indices, preserve.get('sectors'))
         preserve['sectors'] = auto_sec
 
-    # Auto-generate briefing if none or stale
+    # Auto-generate briefing if none or stale AND existing is auto-generated (<=3 items)
     briefing_fresh = preserve.get('briefing') and old_briefing_date.startswith(cst_str)
-    if not briefing_fresh and sectors:
+    existing_top3_len = len(preserve.get('top3', []))
+    existing_picks_len = len(preserve.get('picks', []))
+    # Never overwrite quality Claude-written data (10 items) with auto (3 items)
+    is_auto_briefing = existing_top3_len <= 3 and existing_picks_len <= 5
+    if not briefing_fresh and sectors and is_auto_briefing:
         ai = indices[:4] if indices else []
         idx_text = ' | '.join([f"{i['n']} {i['chg']}" for i in ai])
         ai_top3 = [{
