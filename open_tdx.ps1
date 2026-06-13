@@ -5,15 +5,15 @@ if ($url -match 'tdxstock://(\d{6})') { $code = $Matches[1] }
 if ($url -match 'tdxstock://([^/]+)') { $code = $Matches[1] }
 if (-not $code -or $code.Length -ne 6) { exit }
 
-# 1. Launch TDX if not running
+# 1. Launch TDX if not running (maximized)
 $tdxPath = 'D:\tongxinda\TdxW.exe'
 $tdxProcess = Get-Process -Name 'TdxW' -ErrorAction SilentlyContinue
 if (-not $tdxProcess) {
-    Start-Process -FilePath $tdxPath -WindowStyle Normal
+    Start-Process -FilePath $tdxPath -WindowStyle Maximized
     Start-Sleep -Seconds 5
 }
 
-# 2. Bring TDX to foreground
+# 2. Bring TDX to foreground + maximize
 try {
     Add-Type @"
     using System;
@@ -25,14 +25,14 @@ try {
 "@
     $procs = Get-Process -Name 'TdxW' -ErrorAction SilentlyContinue
     foreach ($p in $procs) {
-        [Win32]::ShowWindow($p.MainWindowHandle, 9) | Out-Null
+        [Win32]::ShowWindow($p.MainWindowHandle, 3) | Out-Null  # SW_MAXIMIZE
         [Win32]::SetForegroundWindow($p.MainWindowHandle) | Out-Null
         Start-Sleep -Milliseconds 300
         break
     }
 } catch {}
 
-# 3. Type stock code into TDX keyboard elf + Enter
+# 3. Type stock code into keyboard elf + Enter
 Add-Type -AssemblyName System.Windows.Forms
 Start-Sleep -Milliseconds 200
 [System.Windows.Forms.SendKeys]::SendWait($code)
