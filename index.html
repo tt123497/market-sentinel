@@ -617,6 +617,14 @@ function go(tab){
       if(data.recap.ztLadder) D.recap.ztLadder=data.recap.ztLadder;
       if(data.concepts){Object.keys(data.concepts).forEach(function(c){if(stockInfo[c])stockInfo[c].concepts=data.concepts[c];});}
     }
+    // Dynamic sectors: append new hot sectors found at noon
+    if(data.dynamicSectors&&data.dynamicSectors.length){
+      D.groups.push({n:'🔥 每日热门 · '+data.dynamicSectors[0].date, sectors:data.dynamicSectors});
+      // Enrich stockInfo
+      data.dynamicSectors.forEach(function(s){
+        s.st.forEach(function(st){stockInfo[st.c]=stockInfo[st.c]||{name:st.n, sector:s.n, pos:'板块成分', tag:s.tag, ind:'新晋热门'};});
+      });
+    }
     if(data.top3&&data.top3.length) D.top3=data.top3;
     if(data.picks&&data.picks.length) D.picks=data.picks;
     if(data.events&&data.events.length) D.events=data.events;
