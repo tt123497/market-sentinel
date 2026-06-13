@@ -109,31 +109,32 @@ def get_fund_flow_em():
                 for i in items]
     except: return []
 
-# EastMoney sector names → our 35 sector keywords (order matters: first match wins)
-EM_SECTOR_ALIAS = {
-    '航天航空':'商业航天','通用航空':'低空经济','航天军工':'商业航天',
-    '券商概念':'','科创板做市商':'','黄金概念':'','昨日打二板':'','行业龙头':'',
-    '锂矿概念':'','CRO':'','托育服务':'','刀片电池':'','病毒防治':'',
-    '汽车制造':'人形机器人','机器人':'人形机器人','具身智能':'人形机器人',
-    '光通信':'CPO/硅光','光模块':'CPO/硅光','光纤':'光纤光缆',
-    '半导体':'AI芯片','芯片':'AI芯片','GPU':'AI芯片','算力':'AI服务器',
-    'PCB':'PCB/覆铜板','覆铜板':'PCB/覆铜板','印制电路':'PCB/覆铜板',
-    'MLCC':'MLCC电容','电容':'MLCC电容','被动元件':'MLCC电容',
-    '铜箔':'电子铜箔','HVLP':'电子铜箔','超导':'超导/核聚变','核聚变':'超导/核聚变',
-    '碳纤维':'碳纤维','固态电池':'固态电池','全固态':'固态电池',
-    '存储':'HBM/存储芯片','HBM':'HBM/存储芯片','NAND':'HBM/存储芯片',
-    '液冷':'液冷散热','冷却':'液冷散热','散热':'液冷散热',
-    '钨':'钨稀土','稀土':'钨稀土','有色':'钨稀土','小金属':'钨稀土','稀缺资源':'钨稀土',
+# EastMoney sector → our EXACT sector name from D.groups (or '' = no match)
+EM_ALIAS = {
+    '航天航空':'商业航天','航天军工':'商业航天','通用航空':'低空经济eVTOL',
+    '低空经济':'低空经济eVTOL','飞行汽车':'低空经济eVTOL',
+    '机器人':'人形机器人','人形机器人':'人形机器人','具身智能':'人形机器人','汽车制造':'',
+    '光通信':'CPO/硅光','光模块':'CPO/硅光','光纤光缆':'光纤光缆','光纤':'光纤光缆',
+    '半导体':'AI芯片','芯片':'AI芯片','AI芯片':'AI芯片','GPU':'AI芯片','算力':'AI服务器/超节点',
+    'PCB':'PCB/覆铜板','覆铜板':'PCB/覆铜板','印制电路板':'PCB/覆铜板',
+    'MLCC':'MLCC电容','被动元件':'MLCC电容','电容':'MLCC电容','电子元件':'MLCC电容',
+    '铜箔':'电子铜箔','超导':'超导/核聚变','核聚变':'超导/核聚变',
+    '碳纤维':'碳纤维','固态电池':'固态电池','全固态电池':'固态电池',
+    '存储芯片':'HBM/存储芯片','HBM':'HBM/存储芯片','NAND':'HBM/存储芯片','存储':'HBM/存储芯片',
+    '液冷':'液冷散热','冷却':'液冷散热','散热':'液冷散热','液冷散热':'液冷散热',
+    '钨':'钨稀土','稀土':'钨稀土','稀土永磁':'钨稀土','有色':'钨稀土','小金属':'钨稀土','稀缺资源':'钨稀土','钨稀土':'钨稀土',
     '玻璃基板':'玻璃基板TGV','TGV':'玻璃基板TGV','先进封装':'先进封装CoWoS','CoWoS':'先进封装CoWoS',
-    '硅片':'半导体硅片','光刻胶':'光刻胶','设备':'半导体设备','刻蚀':'半导体设备',
-    '服务器':'AI服务器/超节点','交换机':'交换机/网络','数据中心':'数据中心/AIDC',
-    '电源':'电源/DrMOS','DrMOS':'电源/DrMOS','六氟化钨':'六氟化钨WF₆',
-    '培育钻石':'培育钻石/散热','金刚石':'培育钻石/散热',
-    '6G':'6G/通信','卫星':'6G/通信','通信':'6G/通信',
-    '低空':'低空经济eVTOL','eVTOL':'低空经济eVTOL','飞行汽车':'低空经济eVTOL',
-    '国企':'','化工':'','石油':'','煤炭':'','钢铁':'','金融':'','银行':'','保险':'',
+    '半导体硅片':'半导体硅片','硅片':'半导体硅片','光刻胶':'光刻胶','半导体设备':'半导体设备','刻蚀':'半导体设备',
+    '服务器':'AI服务器/超节点','交换机':'交换机/网络','数据中心':'数据中心/AIDC','AIDC':'数据中心/AIDC',
+    '电源':'电源/DrMOS','DrMOS':'电源/DrMOS','六氟化钨':'六氟化钨WF₆','WF6':'六氟化钨WF₆','电子特气':'六氟化钨WF₆',
+    '培育钻石':'培育钻石/散热','金刚石':'培育钻石/散热','钻石':'培育钻石/散热',
+    '6G':'6G/通信','通信':'6G/通信','卫星':'6G/通信','6G通信':'6G/通信',
+    '连接器':'连接器/铜连接','铜连接':'连接器/铜连接',
+    '电子树脂':'电子树脂/PPE','PPE':'电子树脂/PPE','树脂':'电子树脂/PPE',
+    '空间计算':'空间计算/物理AI','物理AI':'空间计算/物理AI',
+    '国企':'','化工':'','石油':'','煤炭':'','钢铁':'','金融':'','银行':'','保险':'','券商':'',
     '地产':'','消费':'','食品':'','饮料':'','酒':'','医药':'','医疗':'','新能源':'',
-    '电力':'','光伏':'','风电':'','锂电':'','电池':'','碳中和':'','草甘膦':'',
+    '电力':'','光伏':'','风电':'','锂电':'','电池':'','草甘膦':'',
 }
 
 def compute_winners_losers(live, stock_sector, heat_em):
@@ -151,40 +152,61 @@ def compute_winners_losers(live, stock_sector, heat_em):
         ss = sorted(stocks, key=lambda x: x['chg'], reverse=True)
         sec_detail[sec] = ' / '.join([f"{s['c']} {s['n']} {s['chg']:+.1f}%" for s in ss[:5]])
 
-    def match_em_sector(em_name):
-        """Map EastMoney sector name → our sector name, or '' if no match"""
-        # Direct alias
-        if em_name in EM_SECTOR_ALIAS:
-            return EM_SECTOR_ALIAS[em_name]
-        # Keyword match
-        for kw, our in EM_SECTOR_ALIAS.items():
-            if kw and our and (kw in em_name or em_name in kw):
-                return our
-        # Fuzzy: check our sector names
-        our_sectors = list(sec_detail.keys())
-        for o in our_sectors:
-            if em_name[:2] in o or o[:2] in em_name or em_name in o or o in em_name:
+    def match_our_sec(em_name):
+        """Map EastMoney sector → our exact sec_detail key, or ''"""
+        # 1. Exact alias match → check if target exists in sec_detail
+        if em_name in EM_ALIAS:
+            target = EM_ALIAS[em_name]
+            if target and target in sec_detail: return target
+            if not target: return ''  # explicitly ignored
+        # 2. Partial alias match
+        for kw, target in EM_ALIAS.items():
+            if target and kw and (kw in em_name or em_name in kw):
+                if target in sec_detail: return target
+        # 3. If alias didn't help, try matching alias value via substring
+        for kw, target in EM_ALIAS.items():
+            if target and target in sec_detail and kw and kw in em_name:
+                return target
+        # 4. Direct fuzzy match against sec_detail keys
+        for o in sec_detail:
+            # Two-char overlap or cross-contained
+            if (len(em_name)>=2 and len(o)>=2 and (em_name[:2] in o or o[:2] in em_name)) or em_name in o or o in em_name:
                 return o
+        # 5. Loose: single keyword overlap
+        for kw in em_name:
+            if len(kw) < 2: continue
+            for o in sec_detail:
+                if kw in o: return o
         return ''
 
     sorted_em = sorted(heat_em, key=lambda x: float(x['s'].replace('%','').replace('+','').replace('-','-')), reverse=True)
     winners, losers = [], []
     for s in sorted_em[:10]:
-        matched = match_em_sector(s['n'])
+        matched = match_our_sec(s['n'])
         stks = sec_detail.get(matched,'') if matched else ''
-        # Fallback: try finding any sector with overlapping stocks
-        if not stks:
-            for o, detail in sec_detail.items():
-                if s['n'][:2] in o or o[:2] in s['n']: stks = detail; break
         winners.append({'s': s['n'], 'stks': stks or s['s']})
+        if len(winners) >= 6: break
+    # Losers from OUR sectors (average change), so they're always relevant
+    our_losers = []
+    for sec, detail in sec_detail.items():
+        # Parse average change from detail string
+        chgs = []
+        for part in detail.split(' / '):
+            m = re.search(r'([+-]?\d+\.?\d*)%', part)
+            if m: chgs.append(float(m.group(1)))
+        if chgs:
+            avg = sum(chgs) / len(chgs)
+            our_losers.append((avg, sec, detail))
+    our_losers.sort(key=lambda x: x[0])  # worst first
+    for avg, sec, detail in our_losers[:6]:
+        losers.append({'s': sec, 'stks': detail})
+    # Fill remaining with EM heat if needed
     for s in sorted_em[-10:][::-1]:
-        matched = match_em_sector(s['n'])
-        stks = sec_detail.get(matched,'') if matched else ''
-        if not stks:
-            for o, detail in sec_detail.items():
-                if s['n'][:2] in o or o[:2] in s['n']: stks = detail; break
-        losers.append({'s': s['n'], 'stks': stks or s['s']})
-    return winners[:6], losers[:6]
+        if len(losers) >= 6: break
+        stks = sec_detail.get(match_our_sec(s['n']),'') or ''
+        if not stks: stks = s['s']
+        losers.append({'s': s['n'], 'stks': stks})
+    return winners, losers
 
 def get_zt_ladder(cst):
     """Fetch consecutive limit-up pool from EastMoney. Returns {tiers, maxBoard, totalCount} or None"""
@@ -314,7 +336,7 @@ def main():
             json.dump(existing_archives, f, ensure_ascii=False)
         print(f"📦 Archived: {date_key} ({len(existing_archives)} snapshots)")
 
-    print(f"✅ {out['updated']} | {len(indices)} idx | {len(sectors)} sec | {len(live)} stks | flow={len(fund)} | zt={zt_ladder and zt_ladder.get('totalCount',0) or 0} | trading={is_trading}")
+    print(f"OK {out['updated']} | {len(indices)} idx | {len(sectors)} sec | {len(live)} stks | flow={len(fund)} | zt={zt_ladder and zt_ladder.get('totalCount',0) or 0} | trading={is_trading}")
 
 if __name__ == '__main__':
     main()

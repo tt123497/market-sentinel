@@ -122,26 +122,30 @@ def get_sector_mapping():
         for c in re.findall(r'\{c:"(\d{6})"', st_blocks[i]): mapping[c] = sec_name
     return mapping
 
-# EastMoney sector → our 35 sector keywords
-EM_SEC_ALIAS = {
-    '航天航空':'商业航天','通用航空':'低空经济','航天军工':'商业航天',
-    '券商概念':'','科创板做市商':'','黄金概念':'','昨日打二板':'','行业龙头':'',
-    '机器人':'人形机器人','具身智能':'人形机器人','汽车制造':'人形机器人',
-    '光通信':'CPO/硅光','光模块':'CPO/硅光','光纤':'光纤光缆',
-    '半导体':'AI芯片','芯片':'AI芯片','算力':'AI服务器',
+# EastMoney sector → our EXACT sector name (or '' = no match)
+EM_ALIAS = {
+    '航天航空':'商业航天','航天军工':'商业航天','通用航空':'低空经济eVTOL',
+    '低空经济':'低空经济eVTOL','飞行汽车':'低空经济eVTOL',
+    '机器人':'人形机器人','人形机器人':'人形机器人','具身智能':'人形机器人',
+    '光通信':'CPO/硅光','光模块':'CPO/硅光','光纤光缆':'光纤光缆','光纤':'光纤光缆',
+    '半导体':'AI芯片','芯片':'AI芯片','AI芯片':'AI芯片','算力':'AI服务器/超节点',
     'PCB':'PCB/覆铜板','覆铜板':'PCB/覆铜板',
-    'MLCC':'MLCC电容','电容':'MLCC电容','被动元件':'MLCC电容',
-    '铜箔':'电子铜箔','超导':'超导/核聚变',
-    '存储':'HBM/存储芯片','HBM':'HBM/存储芯片',
-    '液冷':'液冷散热','散热':'液冷散热',
-    '钨':'钨稀土','稀土':'钨稀土','有色':'钨稀土','小金属':'钨稀土',
-    '玻璃基板':'玻璃基板TGV','先进封装':'先进封装CoWoS',
-    '硅片':'半导体硅片','光刻胶':'光刻胶','设备':'半导体设备',
-    '服务器':'AI服务器/超节点','交换机':'交换机/网络','数据中心':'数据中心/AIDC',
-    '电源':'电源/DrMOS','六氟化钨':'六氟化钨WF₆',
-    '6G':'6G/通信','卫星':'6G/通信','低空':'低空经济eVTOL','eVTOL':'低空经济eVTOL',
+    'MLCC':'MLCC电容','被动元件':'MLCC电容','电容':'MLCC电容',
+    '铜箔':'电子铜箔','超导':'超导/核聚变','核聚变':'超导/核聚变',
     '碳纤维':'碳纤维','固态电池':'固态电池',
-    '国企':'','化工':'','石油':'','煤炭':'','金融':'','银行':'','保险':'',
+    '存储芯片':'HBM/存储芯片','HBM':'HBM/存储芯片','存储':'HBM/存储芯片',
+    '液冷':'液冷散热','散热':'液冷散热','液冷散热':'液冷散热',
+    '钨':'钨稀土','稀土':'钨稀土','稀土永磁':'钨稀土','有色':'钨稀土','小金属':'钨稀土','稀缺资源':'钨稀土',
+    '玻璃基板':'玻璃基板TGV','TGV':'玻璃基板TGV','先进封装':'先进封装CoWoS','CoWoS':'先进封装CoWoS',
+    '半导体硅片':'半导体硅片','硅片':'半导体硅片','光刻胶':'光刻胶','半导体设备':'半导体设备',
+    '服务器':'AI服务器/超节点','交换机':'交换机/网络','数据中心':'数据中心/AIDC',
+    '电源':'电源/DrMOS','DrMOS':'电源/DrMOS','六氟化钨':'六氟化钨WF₆','电子特气':'六氟化钨WF₆',
+    '培育钻石':'培育钻石/散热','金刚石':'培育钻石/散热',
+    '6G':'6G/通信','通信':'6G/通信','卫星':'6G/通信',
+    '连接器':'连接器/铜连接','铜连接':'连接器/铜连接',
+    '电子树脂':'电子树脂/PPE','PPE':'电子树脂/PPE','树脂':'电子树脂/PPE',
+    '空间计算':'空间计算/物理AI','物理AI':'空间计算/物理AI',
+    '国企':'','化工':'','石油':'','煤炭':'','金融':'','银行':'','保险':'','券商':'',
     '消费':'','食品':'','酒':'','医药':'','医疗':'','新能源':'','电力':'','光伏':'',
 }
 
@@ -160,25 +164,42 @@ def compute_winners_losers(live, stock_sector, heat_em):
         ss = sorted(stocks, key=lambda x: x['chg'], reverse=True)
         sec_detail[sec] = ' / '.join([f"{s['c']} {s['n']} {s['chg']:+.1f}%" for s in ss[:5]])
 
-    def match_em(em_name):
-        if em_name in EM_SEC_ALIAS: return EM_SEC_ALIAS[em_name]
-        for kw, our in EM_SEC_ALIAS.items():
-            if kw and our and (kw in em_name or em_name in kw): return our
+    def match_our(em_name):
+        if em_name in EM_ALIAS:
+            t = EM_ALIAS[em_name]
+            if not t: return ''
+            if t in sec_detail: return t
+        for kw, t in EM_ALIAS.items():
+            if t and t in sec_detail and kw and (kw in em_name or em_name in kw):
+                return t
         for o in sec_detail:
-            if em_name[:2] in o or o[:2] in em_name or em_name in o or o in em_name: return o
+            if (len(em_name)>=2 and len(o)>=2 and (em_name[:2] in o or o[:2] in em_name)) or em_name in o or o in em_name:
+                return o
         return ''
 
     sorted_em = sorted(heat_em, key=lambda x: float(x['s'].replace('%','').replace('+','').replace('-','-')), reverse=True)
     winners, losers = [], []
     for s in sorted_em[:10]:
-        matched = match_em(s['n'])
-        stks = sec_detail.get(matched,'') if matched else ''
-        winners.append({'s': s['n'], 'stks': stks or s['s']})
+        m = match_our(s['n'])
+        winners.append({'s': s['n'], 'stks': sec_detail.get(m,'') if m else s['s']})
+        if len(winners) >= 6: break
+    # Losers from OUR sectors (by average change), so always relevant
+    our_losers = []
+    import re
+    for sec, detail in sec_detail.items():
+        chgs = []
+        for part in detail.split(' / '):
+            m = re.search(r'([+-]?\d+\.?\d*)%', part)
+            if m: chgs.append(float(m.group(1)))
+        if chgs: our_losers.append((sum(chgs)/len(chgs), sec, detail))
+    our_losers.sort(key=lambda x: x[0])
+    for avg, sec, detail in our_losers[:6]:
+        losers.append({'s': sec, 'stks': detail})
     for s in sorted_em[-10:][::-1]:
-        matched = match_em(s['n'])
-        stks = sec_detail.get(matched,'') if matched else ''
-        losers.append({'s': s['n'], 'stks': stks or s['s']})
-    return winners[:6], losers[:6]
+        if len(losers) >= 6: break
+        m = match_our(s['n'])
+        losers.append({'s': s['n'], 'stks': sec_detail.get(m,'') if m else s['s']})
+    return winners, losers
 
 # ═══════════════ MAIN ═══════════════
 def main():
