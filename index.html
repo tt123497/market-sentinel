@@ -146,7 +146,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .layout-card .lc-stocks{display:flex;flex-wrap:wrap;gap:5px}
 
 .evt-row.past{opacity:.45}
-.evt-row.past .evt-desc{text-decoration:line-through}
 .evt-row.past .evt-date{color:var(--dim)}
 
 .tbl-wrap{border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border);margin-bottom:14px}
@@ -479,7 +478,10 @@ const D={
     {d:"8月中旬",icon:"💾",e:"SK海力士HBM4试产进度更新",s:"HBM/先进封装",big:0,desc:"HBM产能缺口50%+,扩产节奏决定价格走向"},
     {d:"8月20日",icon:"🏭",e:"日本WF₆停产50天市场影响评估",s:"六氟化钨",big:0,desc:"停产满50天,现货价格是否突破250万元/吨"},
     {d:"8月25日",icon:"🤖",e:"特斯拉Optimus V3首批月度交付数据",s:"人形机器人",big:1,desc:"量产真实性验证,不及预期则板块回调"},
-  ]
+  ],
+
+  // ---- Briefing History (cloud archives past briefings) ----
+  bHistory:[]
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -515,6 +517,7 @@ function go(tab){
     if(data.updated) D.updated=data.updated;
     if(data.nextSentinel) D.next=data.nextSentinel;
     if(data.livePrices) D.livePrices=data.livePrices;
+    if(data.bHistory&&data.bHistory.length) D.bHistory=data.bHistory;
     // Map Claude sectors -> D.groups sig/msg/u values
     if(data.sectors){
       var secMap={};
@@ -630,7 +633,19 @@ function go(tab){
   D.top3.forEach(n=>{let link=n.u?'<a class="n-link" href="'+n.u+'" target="_blank" rel="noopener">🔗 查看原文</a>':'';br+=`<div class="news-card"><div class="n-head"><div class="n-rank r${n.r}">${n.r}</div><div class="n-title">${n.u?'<a href="'+n.u+'" target="_blank" rel="noopener">'+n.t+'</a>':n.t}</div></div><div class="n-body">${n.b}</div>${link}<div class="n-pills">${n.s.map(x=>`<span class="c-pill pick">${x}</span>`).join('')}</div></div>`;});
   br+=`</div><div class="section"><div class="section-title">🎯 精选标的 Top ${D.picks.length}</div><div class="pick-row">`;
   D.picks.forEach(p=>{br+=`<div class="pick-item"><div class="pi-rank">#${p.r}</div><div class="pi-info"><div><span class="pi-name">${p.n}</span><span class="pi-code">${p.c}</span></div><div class="pi-reason">${p.why}${p.u?' <a href="'+p.u+'" target="_blank" rel="noopener" style="font-size:.68rem;color:var(--blue)">🔗</a>':''}</div></div><div class="pi-sector">${p.sec}</div></div>`;});
-  br+=`</div></div></div>`;
+  br+=`</div></div>`;
+  // Briefing history (past briefings archived)
+  if(D.bHistory&&D.bHistory.length){
+    br+=`<div style="margin-top:18px;padding-top:12px;border-top:1px dashed var(--border)"><details><summary style="font-size:1.02rem;font-weight:600;color:var(--dim);cursor:pointer;padding:8px 0">📂 历史简报 · ${D.bHistory.length} 期</summary><div style="margin-top:10px">`;
+    D.bHistory.forEach(function(h){
+      br+=`<div style="margin-bottom:14px;padding:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);opacity:.7"><div style="font-size:.82rem;color:var(--dim);margin-bottom:6px">📅 ${h.updated||''}</div>`;
+      if(h.top3)h.top3.forEach(function(n){br+=`<div style="font-size:.88rem;color:var(--sub);margin-bottom:3px;line-height:1.5">• <b>${n.t}</b></div>`;});
+      if(h.picks&&h.picks.length)br+=`<div style="margin-top:4px;display:flex;flex-wrap:wrap;gap:4px">${h.picks.map(function(p){return '<span class="c-pill pick" style="opacity:.6">'+p.c+' '+p.n+'</span>';}).join('')}</div>`;
+      br+=`</div>`;
+    });
+    br+=`</div></details></div>`;
+  }
+  br+=`</div>`;
 
   // ════ CHAIN ════
   let ch=`<div class="tab-panel" id="panel-chain"><div class="section"><div class="section-title">🗺️ AI全产业链穿透图 · 35赛道（点展开）</div><p style="font-size:.84rem;color:var(--sub);margin-bottom:12px">任何环节出消息→30秒定位全链受益标的。🔥=当前最值得关注</p>`;
@@ -740,6 +755,20 @@ function go(tab){
             picksHtml+='</div>';
             picksDiv.innerHTML=picksHtml;
           }
+        }
+        // Briefing history refresh
+        if(d.bHistory&&d.bHistory.length){
+          var bhEl=bp.querySelector('#briefingHistory');
+          if(!bhEl){bhEl=document.createElement('div');bhEl.id='briefingHistory';bp.appendChild(bhEl);}
+          var bhHtml='<div style="margin-top:18px;padding-top:12px;border-top:1px dashed var(--border)"><details><summary style="font-size:1.02rem;font-weight:600;color:var(--dim);cursor:pointer;padding:8px 0">📂 历史简报 · '+d.bHistory.length+' 期</summary><div style="margin-top:10px">';
+          d.bHistory.forEach(function(h){
+            bhHtml+='<div style="margin-bottom:14px;padding:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);opacity:.7"><div style="font-size:.82rem;color:var(--dim);margin-bottom:6px">📅 '+(h.updated||'')+'</div>';
+            if(h.top3)h.top3.forEach(function(n){bhHtml+='<div style="font-size:.88rem;color:var(--sub);margin-bottom:3px;line-height:1.5">• <b>'+n.t+'</b></div>';});
+            if(h.picks&&h.picks.length)bhHtml+='<div style="margin-top:4px;display:flex;flex-wrap:wrap;gap:4px">'+h.picks.map(function(p){return '<span class="c-pill pick" style="opacity:.6">'+p.c+' '+p.n+'</span>';}).join('')+'</div>';
+            bhHtml+='</div>';
+          });
+          bhHtml+='</div></details></div>';
+          bhEl.innerHTML=bhHtml;
         }
         // Recap panel
         var rp=document.getElementById('panel-recap');if(rp&&d.recap){

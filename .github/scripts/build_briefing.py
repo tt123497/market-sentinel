@@ -94,6 +94,16 @@ def build_briefing():
     is_manual = old_top3 and not old_top3[0].get('t','').startswith('📊')
     is_today = old_briefing.get('updated','').startswith(cst.strftime('%Y-%m-%d'))
 
+    # Save old briefing to history (up to 30 entries) before overwriting
+    bHistory = existing.get('bHistory', [])
+    if old_briefing and old_briefing.get('top3'):
+        # Only archive if it has real content and different from last saved
+        last_date = bHistory[0].get('updated','') if bHistory else ''
+        if old_briefing.get('updated','') != last_date:
+            bHistory.insert(0, old_briefing)
+            bHistory = bHistory[:30]  # keep max 30
+        existing['bHistory'] = bHistory
+
     if is_manual and is_today:
         # Keep Claude's manual briefing, don't overwrite
         print(f"Briefing preserved (manual): {cst.strftime('%H:%M')}")

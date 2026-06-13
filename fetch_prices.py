@@ -158,7 +158,7 @@ def main():
             'updateCount': int(time.time() / 900), 'trading': is_trading
         }
     }
-    for k in ['sectors', 'top3', 'picks', 'briefing', 'events', 'layout', 'extraCodes']:
+    for k in ['sectors', 'top3', 'picks', 'briefing', 'events', 'layout', 'extraCodes', 'bHistory']:
         if k in existing and existing[k]: out[k] = existing[k]
 
     with open(DATA_PATH, 'w', encoding='utf-8') as f:
