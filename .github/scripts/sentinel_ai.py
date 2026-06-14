@@ -10,12 +10,15 @@ DATA_PATH = os.path.join(DIR, 'data.json')
 API_KEY = os.environ.get('DEEPSEEK_API_KEY', '')
 API_URL = 'https://api.deepseek.com/v1/chat/completions'
 
-OUR_SECTORS = '''AI芯片, CPO/硅光, 光模块, 光纤光缆, 连接器/铜连接,
+OUR_SECTORS = '''锂矿/盐湖提锂, 锂电池/电解液, 光伏/太阳能, 风电, 储能, 新能源汽车,
   PCB/覆铜板, MLCC电容, 电子树脂/PPE, 电子铜箔, HBM/存储芯片,
   AI服务器/超节点, 液冷散热, 交换机/网络, 电源/DrMOS, 数据中心/AIDC,
   半导体设备, 光刻胶, 先进封装CoWoS, 半导体硅片,
   六氟化钨WF6, 玻璃基板TGV, 培育钻石/散热, 超导/核聚变, 碳纤维,
-  人形机器人, 商业航天, 6G/通信, 固态电池, 低空经济eVTOL, 空间计算/物理AI, 钨稀土'''
+  人形机器人, 商业航天, 6G/通信, 固态电池, 低空经济eVTOL, 空间计算/物理AI, 钨稀土,
+  煤炭, 黄金/贵金属, 铜铝有色, 化工, 钢铁,
+  银行, 券商, 保险, 房地产开发,
+  白酒, 食品饮料, 医药/CRO, 医疗器械'''
 
 def load_data():
     with open(DATA_PATH, 'r', encoding='utf-8') as f:
@@ -145,7 +148,7 @@ def build_prompt(d):
     "suggestion": "操作建议(30字内)"
   }},
   "sectors": [
-    {{"name":"赛道名(必须从下方35赛道列表中选)","sig":"major/good/neutral/negative","msg":"信号描述+数据依据, 40字内","u":""}}
+    {{"name":"赛道名(必须从下方54赛道列表中选)","sig":"major/good/neutral/negative","msg":"信号描述+数据依据, 40字内","u":""}}
   ],
   "briefing": {{
     "top3": [
@@ -157,11 +160,11 @@ def build_prompt(d):
   }}
 }}
 
-═══ 35赛道列表(必须从这里面选) ═══
+═══ 54赛道列表(必须从这里面选) ═══
 {OUR_SECTORS}
 
 ═══ 要求 ═══
-1. sectors输出12个赛道, sig按涨跌幅: >=3%为major, 0-3%为good, -1%~0为neutral, <-1%为negative
+1. sectors输出20个赛道, sig按涨跌幅: >=3%为major, 0-3%为good, -1%~0为neutral, <-1%为negative
 2. top3输出10条(!!!), 从市场最重要的维度切入(宏观/资金/板块/产业/风险), 每条b字段150-200字, 必须包含具体数据、信息来源、定价分析
 3. picks输出10只精选标的, 每周角度推荐
 4. newEvents: 列出未来30天内所有A股重要事件(不限赛道,财报/会议/政策/数据发布/产业催化/宏观数据), 每条必须含: d(月+日), icon(emoji), e(标题), s(赛道名或行业名), big(1=硬催化如停产/涨价/法规/财报,0=普通会议), desc(20字内说明), u(!!!必须填真实新闻链接URL,不能为空,从训练数据中找对应新闻原文链接,至少填https://data.eastmoney.com/)
