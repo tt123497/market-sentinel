@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Auto-discover new hot sectors at pre-market/noon/post-market. Injects into data.json."""
+"""Auto-discover new hot sectors at pre-market/noon/post-market.
+Also flags uncovered hot sectors (->_hot_uncovered for Claude to review)."""
 import json, os, time
 from datetime import datetime, timezone, timedelta
 from urllib.request import Request, urlopen
@@ -19,6 +20,19 @@ EXCLUDE = {'昨日打板','科创板做市','融资融券','大盘股','HS300','
     '金融地产','DRG/DIP','CAR-T','共享经济','可燃冰','低碳冶金','草甘膦',
     '动力电池回收','托育服务','刀片电池','病毒防治','CRO','锂矿概念'}
 
+# All 60 sectors we track (used to detect uncovered hot boards)
+OUR_60 = {'锂矿/盐湖提锂','锂电池/电解液','光伏/太阳能','风电','储能','新能源汽车',
+    '煤炭','黄金/贵金属','铜铝有色','化工','钢铁','银行','券商','保险','房地产开发',
+    '白酒','食品饮料','医药/CRO','医疗器械','算电协同','算力租赁/GPU云','Token工厂/模型推理',
+    '稀土永磁','钼/小金属','电子特气/工业气体','半导体靶材',
+    'AI智能体/应用','核电/核能','量子计算/量子科技','卫星互联网/北斗',
+    'AI芯片','CPO/硅光','光模块','光纤光缆','连接器/铜连接',
+    'PCB/覆铜板','MLCC电容','电子树脂/PPE','电子铜箔','HBM/存储芯片',
+    'AI服务器/超节点','液冷散热','交换机/网络','电源/DrMOS','数据中心/AIDC',
+    '半导体设备','光刻胶','先进封装CoWoS','半导体硅片',
+    '六氟化钨WF₆','玻璃基板TGV','培育钻石/散热','超导/核聚变','碳纤维',
+    '人形机器人','商业航天','6G/通信','固态电池','低空经济eVTOL','空间计算/物理AI','钨稀土'}
+
 def fetch(url, retries=2):
     for _ in range(retries):
         try:
@@ -35,6 +49,21 @@ def discover():
     try: items = json.loads(text).get('data',{}).get('diff',[])
     except: return
 
+    # ── NEW: Flag uncovered hot sectors (Claude reads _hot_uncovered next session) ──
+    hot_uncovered = []
+    for h in items[:30]:
+        pct = h.get('f3', 0) or 0
+        if pct < 1.5: continue
+        name = h.get('f14', '')
+        if any(our in name or name in our for our in OUR_60): continue
+        if any(ex in name or name in ex for ex in EXCLUDE): continue
+        hot_uncovered.append({'n': name, 'pct': round(pct, 1)})
+
+    # Load and update data.json
+    with open(DATA_PATH, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    data['_hot_uncovered'] = hot_uncovered[:15]
+
     new_hot = []
     for h in items:
         pct = h.get('f3',0) or 0
@@ -48,10 +77,6 @@ def discover():
             if kw in name or name in kw: skip = True; break
         if not skip:
             new_hot.append((h, pct))
-
-    if not new_hot:
-        print('No new sectors')
-        return
 
     discovered = []
     for h, pct in new_hot[:5]:
@@ -84,24 +109,24 @@ def discover():
             'ev': '%s自动发现' % today, 'stars': 3
         })
 
-    if not discovered:
-        print('No valid stocks')
-        return
+    if discovered:
+        old_dyn = data.get('dynamicSectors', [])
+        merged = discovered + old_dyn
+        seen, dedup = set(), []
+        for ds in merged:
+            k = ds['id']
+            if k not in seen: seen.add(k); dedup.append(ds)
+        data['dynamicSectors'] = dedup[:8]
+        names = ', '.join(d['n'] for d in discovered)
+        print('OK: %d new sectors: %s' % (len(discovered), names))
 
-    with open(DATA_PATH, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    old_dyn = data.get('dynamicSectors', [])
-    merged = discovered + old_dyn
-    seen, dedup = set(), []
-    for ds in merged:
-        k = ds['id']
-        if k not in seen: seen.add(k); dedup.append(ds)
-    data['dynamicSectors'] = dedup[:8]
     with open(DATA_PATH, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    names = ', '.join(d['n'] for d in discovered)
-    print('OK: %d new sectors: %s' % (len(discovered), names))
+    if hot_uncovered:
+        print('Uncovered hot (%d): %s' % (len(hot_uncovered), ', '.join(h['n'] for h in hot_uncovered[:8])))
+    else:
+        print('All hot sectors covered ✅')
 
 if __name__ == '__main__':
     discover()
