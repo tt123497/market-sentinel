@@ -115,9 +115,16 @@ def build_prompt(d):
     winners_str = '\n'.join([f"  {w['s']}: {w.get('stks','')[:100]}" for w in winners[:6]])
     losers_str = '\n'.join([f"  {l['s']}: {l.get('stks','')[:100]}" for l in losers[:6]])
 
-    # Read recent real news for the AI to reference
-    news_feed = d.get('_newsFeed', [])[:20]
-    news_text = '\n'.join([f"  [{n.get('time','?')}] {n.get('t','')}" for n in news_feed]) if news_feed else '暂无实时新闻'
+    # Read recent real news for the AI to reference (two channels)
+    ns = d.get('_newsSector', [])[:15]
+    nm = d.get('_newsMarket', [])[:10]
+    if ns or nm:
+        news_text = '══ 赛道新闻 ══\n'
+        news_text += '\n'.join([f"  [{n.get('time','?')}] {n.get('t','')}  {n.get('u','')}" for n in ns])
+        news_text += '\n══ 市场宏观 ══\n'
+        news_text += '\n'.join([f"  [{n.get('time','?')}] {n.get('t','')}  {n.get('u','')}" for n in nm])
+    else:
+        news_text = '暂无实时新闻'
 
     prompt = f"""当前时间：{cst.strftime('%Y年%m月%d日 %H:%M CST')}（每小时扫描）
 
