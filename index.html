@@ -476,7 +476,25 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <div class="nav" id="navBar"></div>
 <div class="main" id="mainContent"></div>
 <div class="stock-tip" id="stockTip" style="display:none"></div>
-<div class="footer">⚠️ 本页面仅供研究参考，不构成任何投资建议。投资有风险，入市须谨慎。</div>
+<div class="footer">⚠️ 本页面仅供研究参考，不构成任何投资建议。投资有风险，入市须谨慎。<br><span style="font-size:.78rem;cursor:pointer;color:var(--blue);text-decoration:underline" onclick="document.getElementById('feedbackModal').style.display='flex'">💬 意见反馈</span></div>
+
+<!-- ── Feedback Modal ── -->
+<div class="help-overlay" id="feedbackModal" style="display:none" onclick="if(event.target===this)this.style.display='none'">
+<div class="help-modal" style="max-width:440px" onclick="event.stopPropagation()">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="font-size:1.05rem;font-weight:700">💬 意见反馈</div>
+  <button onclick="document.getElementById('feedbackModal').style.display='none'" style="background:none;border:none;font-size:1.3rem;color:var(--sub);cursor:pointer">&times;</button>
+</div>
+<p style="font-size:.82rem;color:var(--sub);margin-bottom:12px">试用中有任何问题、建议、发现Bug，请留言。你的反馈直接帮助改进。</p>
+<textarea id="fbText" rows="5" style="width:100%;padding:10px;font-size:.86rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-family:var(--font);resize:vertical;outline:none" placeholder="请输入你的建议或发现的Bug..."></textarea>
+<div style="display:flex;gap:8px;margin-top:10px">
+  <input type="text" id="fbContact" placeholder="联系方式(选填,微信/邮箱)" style="flex:1;padding:8px 10px;font-size:.82rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-family:var(--font);outline:none">
+  <button onclick="submitFeedback()" style="padding:8px 20px;font-size:.84rem;font-weight:700;background:var(--grad1);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer">提交</button>
+</div>
+<div id="fbMsg" style="font-size:.78rem;margin-top:8px;display:none"></div>
+<div style="margin-top:12px;padding-top:8px;border-top:1px solid var(--border)"><details><summary style="font-size:.78rem;color:var(--dim);cursor:pointer">📋 我的反馈历史 (本机)</summary><div id="fbHistory" style="font-size:.76rem;color:var(--sub);max-height:120px;overflow-y:auto;margin-top:4px;line-height:1.6"></div></details></div>
+</div>
+</div>
 
 <script>
 // ═══════════════════════════════════════════════════════════════
@@ -990,6 +1008,38 @@ window.checkPass=function(){
     document.getElementById('passInput').value='';
   }
 };
+
+// ══ Feedback system (localStorage + mailto) ══
+window.submitFeedback=function(){
+  var text=document.getElementById('fbText').value.trim();
+  var contact=document.getElementById('fbContact').value.trim();
+  var msg=document.getElementById('fbMsg');
+  if(!text){msg.style.display='block';msg.style.color='var(--red)';msg.textContent='请输入反馈内容';return;}
+  // Save to localStorage
+  var fbList=JSON.parse(localStorage.getItem('_feedback')||'[]');
+  fbList.push({t:text,c:contact,time:new Date().toLocaleString('zh-CN')});
+  fbList=fbList.slice(-20);
+  localStorage.setItem('_feedback',JSON.stringify(fbList));
+  // Open mailto for first submission
+  var subject='股市哨兵 意见反馈';
+  var body=text+(contact?'\n\n联系方式: '+contact:'');
+  window.open('mailto:feedback@sentinel.local?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body),'_blank');
+  // Show success
+  document.getElementById('fbText').value='';
+  document.getElementById('fbContact').value='';
+  msg.style.display='block';msg.style.color='var(--green)';msg.textContent='感谢反馈！已保存。';
+  loadFeedbackHistory();
+  setTimeout(function(){msg.style.display='none';},3000);
+};
+function loadFeedbackHistory(){
+  var el=document.getElementById('fbHistory');
+  if(!el)return;
+  var fbList=JSON.parse(localStorage.getItem('_feedback')||'[]');
+  if(!fbList.length){el.innerHTML='暂无';return;}
+  el.innerHTML=fbList.reverse().map(function(f){
+    return '<div style="margin-bottom:4px"><b>'+f.time+'</b><br>'+f.t+(f.c?' <span style="color:var(--dim)">— '+f.c+'</span>':'')+'</div>';
+  }).join('');
+}
 
 (function build(){
   document.getElementById('navBar').innerHTML=TABS.map((t,i)=>`<div class="nav-pill${i===0?' on':''}" id="pill-${t}" onclick="go('${t}')">${TLABEL[t]}</div>`).join('');
