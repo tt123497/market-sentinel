@@ -500,52 +500,58 @@ def main():
 
     # Auto-repair layout stocks: fetch real market top stocks per sector
     existing_layout = preserve.get('layout', []) or []
-    if existing_layout and sectors:
-        # Build EM sector name → board code mapping from heat data
-        name_to_board = {}
-        for h in sectors:
-            name_to_board[h['n']] = h.get('bk', h.get('f12', ''))
-        # Reverse alias: our sector name -> EM board name
-        our_to_em = {}
-        for kw, our in EM_ALIAS.items():
-            if our and our not in our_to_em:
-                our_to_em[our] = kw  # use first match
-        for lev in existing_layout:
-            sec_name = lev.get('s', '')
-            # 1. Direct match in heat names
-            bcode = name_to_board.get(sec_name, '')
-            # 2. Via alias table
-            if not bcode:
-                em_hint = our_to_em.get(sec_name, '')
-                if em_hint:
+    if existing_layout:
+        if sectors:
+            # Build EM sector name → board code mapping from heat data
+            name_to_board = {}
+            for h in sectors:
+                name_to_board[h['n']] = h.get('bk', h.get('f12', ''))
+            # Reverse alias: our sector name -> EM board name
+            our_to_em = {}
+            for kw, our in EM_ALIAS.items():
+                if our and our not in our_to_em:
+                    our_to_em[our] = kw  # use first match
+            for lev in existing_layout:
+                sec_name = lev.get('s', '')
+                # 1. Direct match in heat names
+                bcode = name_to_board.get(sec_name, '')
+                # 2. Via alias table
+                if not bcode:
+                    em_hint = our_to_em.get(sec_name, '')
+                    if em_hint:
+                        for n, bc in name_to_board.items():
+                            if em_hint in n or n in em_hint:
+                                bcode = bc; break
+                # 3. Fuzzy match heat names
+                if not bcode:
                     for n, bc in name_to_board.items():
-                        if em_hint in n or n in em_hint:
+                        if sec_name[:2] in n or n[:2] in sec_name or sec_name in n or n in sec_name:
                             bcode = bc; break
-            # 3. Fuzzy match heat names
-            if not bcode:
-                for n, bc in name_to_board.items():
-                    if sec_name[:2] in n or n[:2] in sec_name or sec_name in n or n in sec_name:
-                        bcode = bc; break
-            if not bcode:
-                # Fallback: all-market top gainers for sectors without a board
+                if not bcode:
+                    if not lev.get('stocks') or len(lev.get('stocks',[])) < 3:
+                        lev['stocks'] = fetch_all_top_gainers()
+                    continue
+                # Fetch top 8 stocks from this sector board (real market)
+                bstocks = []
+                for _ in range(2):
+                    try:
+                        t = fetch('http://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=8&po=1&np=1&fltt=2&invt=2&fid=f3&fs=b:' + bcode + '&fields=f2,f3,f12,f14', encoding='utf-8')
+                        if t:
+                            for s in json.loads(t).get('data',{}).get('diff',[]):
+                                bstocks.append(s.get('f12','') + ' ' + s.get('f14',''))
+                            break
+                    except: pass
+                if bstocks:
+                    lev['stocks'] = bstocks[:8]
                 if not lev.get('stocks') or len(lev.get('stocks',[])) < 3:
                     lev['stocks'] = fetch_all_top_gainers()
-                continue
-            # Fetch top 8 stocks from this sector board (real market)
-            bstocks = []
-            for _ in range(2):
-                try:
-                    t = fetch('http://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=8&po=1&np=1&fltt=2&invt=2&fid=f3&fs=b:' + bcode + '&fields=f2,f3,f12,f14', encoding='utf-8')
-                    if t:
-                        for s in json.loads(t).get('data',{}).get('diff',[]):
-                            bstocks.append(s.get('f12','') + ' ' + s.get('f14',''))
-                        break
-                except: pass
-            if bstocks:
-                lev['stocks'] = bstocks[:8]
-            # Fallback if board returned empty
-            if not lev.get('stocks') or len(lev.get('stocks',[])) < 3:
-                lev['stocks'] = fetch_all_top_gainers()
+        else:
+            # No heat data — use all-market fallback for every layout card
+            fallback = fetch_all_top_gainers()
+            if fallback:
+                for lev in existing_layout:
+                    if not lev.get('stocks') or len(lev.get('stocks',[])) < 3:
+                        lev['stocks'] = fallback
     preserve['layout'] = existing_layout
 
     out = {
