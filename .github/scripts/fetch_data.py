@@ -99,6 +99,16 @@ def get_live_prices(all_codes):
         time.sleep(0.05)
     return results
 
+def fetch_all_top_gainers():
+    """Fallback: top 8 gainers from ALL A-shares. Returns list of 'code name'."""
+    try:
+        t = fetch('http://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=8&po=1&np=1&fltt=2&invt=2&fid=f3&fs=m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23&fields=f2,f3,f12,f14', encoding='utf-8')
+        if t:
+            return [s.get('f12','') + ' ' + s.get('f14','') for s in json.loads(t).get('data',{}).get('diff',[])]
+    except:
+        pass
+    return []
+
 def get_fund_flow_em():
     """Returns fund flow: [{n, amt: '+87.9亿'}, ...]"""
     text = fetch('http://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10&po=1&np=1&fltt=2&invt=2&fid=f62&fs=m:90+t:3&fields=f3,f12,f14,f62', encoding='utf-8')
@@ -132,6 +142,14 @@ EM_ALIAS = {
     '连接器':'连接器/铜连接','铜连接':'连接器/铜连接',
     '电子树脂':'电子树脂/PPE','PPE':'电子树脂/PPE','树脂':'电子树脂/PPE',
     '空间计算':'空间计算/物理AI','物理AI':'空间计算/物理AI',
+    # New sectors from AI sentinel (beyond 35 tracked)
+    'AI应用':'AI芯片','人工智能':'AI芯片','大模型':'AI芯片','AI':'AI芯片',
+    '鸿蒙':'空间计算/物理AI','华为概念':'空间计算/物理AI',
+    '消费电子':'PCB/覆铜板','AI硬件':'PCB/覆铜板','AI眼镜':'PCB/覆铜板',
+    '数字经济':'数据中心/AIDC','数据要素':'数据中心/AIDC',
+    '智能体':'AI芯片','互联网':'AI芯片',
+    # Fallback: generic →  commercial aerospace (most active)
+    '大会':'商业航天','峰会':'商业航天','论坛':'商业航天',
     '国企':'','化工':'','石油':'','煤炭':'','钢铁':'','金融':'','银行':'','保险':'','券商':'',
     '地产':'','消费':'','食品':'','饮料':'','酒':'','医药':'','医疗':'','新能源':'',
     '电力':'','光伏':'','风电':'','锂电':'','电池':'','草甘膦':'',
@@ -508,7 +526,11 @@ def main():
                 for n, bc in name_to_board.items():
                     if sec_name[:2] in n or n[:2] in sec_name or sec_name in n or n in sec_name:
                         bcode = bc; break
-            if not bcode: continue
+            if not bcode:
+                # Fallback: all-market top gainers for sectors without a board
+                if not lev.get('stocks') or len(lev.get('stocks',[])) < 3:
+                    lev['stocks'] = fetch_all_top_gainers()
+                continue
             # Fetch top 8 stocks from this sector board (real market)
             bstocks = []
             for _ in range(2):
@@ -520,7 +542,10 @@ def main():
                         break
                 except: pass
             if bstocks:
-                lev['stocks'] = bstocks[:6]
+                lev['stocks'] = bstocks[:8]
+            # Fallback if board returned empty
+            if not lev.get('stocks') or len(lev.get('stocks',[])) < 3:
+                lev['stocks'] = fetch_all_top_gainers()
     preserve['layout'] = existing_layout
 
     out = {
