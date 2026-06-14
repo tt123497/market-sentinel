@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Cloud Sentinel — AI 哨兵。每天4次用 DeepSeek API 生成高质量简报/赛道/标的。
-质量校验：必须达到10条top3+10条picks才写入，不足则丢弃。"""
+"""Cloud Sentinel — AI 哨兵。每半小时用 DeepSeek API 扫描市场变化，
+更新简报/赛道信号/精选标的/新事件。
+校验：≥5条top3+≥5条picks才写入，不足则保留上一版。"""
 import json, os, time
 from datetime import datetime, timezone, timedelta
 from urllib.request import Request, urlopen
@@ -37,7 +38,7 @@ def call_ai(prompt_text, max_tokens=4000):
     payload = {
         'model': 'deepseek-chat',
         'messages': [
-            {'role': 'system', 'content': '你是A股顶级市场分析师。请严格按JSON格式输出，不要加任何解释文字。所有赛道名必须使用系统指定的名称。'},
+            {'role': 'system', 'content': '你是A股实时市场分析师。每半小时扫描一次数据变化，重点捕捉最近半小时的异动。严格按JSON格式输出，赛道名只用系统指定名称。'},
             {'role': 'user', 'content': prompt_text}
         ],
         'temperature': 0.3,
@@ -62,11 +63,11 @@ def validate_output(result):
     picks = b.get('picks', [])
     sectors = result.get('sectors', [])
 
-    if len(top3) < 3:
-        print(f'REJECT: top3 count={len(top3)} < 3')
+    if len(top3) < 5:
+        print(f'REJECT: top3 count={len(top3)} < 5')
         return False
-    if len(picks) < 3:
-        print(f'REJECT: picks count={len(picks)} < 3')
+    if len(picks) < 5:
+        print(f'REJECT: picks count={len(picks)} < 5')
         return False
     if len(sectors) < 3:
         print(f'REJECT: sectors count={len(sectors)} < 3')
@@ -150,7 +151,7 @@ def build_prompt(d):
     "suggestion": "操作建议(30字内)"
   }},
   "sectors": [
-    {{"name":"赛道名(必须从下方54赛道列表中选)","sig":"major/good/neutral/negative","msg":"信号描述+数据依据, 40字内","u":""}}
+    {{"name":"赛道名(必须从下方62赛道列表中选)","sig":"major/good/neutral/negative","msg":"信号描述+数据依据, 40字内","u":""}}
   ],
   "briefing": {{
     "top3": [

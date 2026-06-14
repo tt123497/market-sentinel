@@ -2,12 +2,8 @@ name: 🧠 AI 哨兵
 
 on:
   schedule:
-    # 盘前分析 (CST 9:00 = UTC 1:00)
-    - cron: '0 1 * * 1-5'
-    # 午间分析 (CST 12:00 = UTC 4:00)
-    - cron: '0 4 * * 1-5'
-    # 盘后分析 (CST 17:00 = UTC 9:00)
-    - cron: '0 9 * * 1-5'
+    # 每半小时扫描 (交易时段 CST 9:00-15:30)
+    - cron: '*/30 1-7 * * 1-5'
     # 周末复盘 (周六 CST 10:00 = UTC 2:00)
     - cron: '0 2 * * 6'
   workflow_dispatch:
