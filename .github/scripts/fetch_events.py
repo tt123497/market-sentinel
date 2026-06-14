@@ -36,121 +36,42 @@ def next_biz(y, m, day):
     while d.weekday() >= 5: d += timedelta(days=1)
     return d
 
-def last_biz(y, m):
-    d = datetime(y, m, cal.monthrange(y, m)[1])
-    while d.weekday() >= 5: d += timedelta(days=1)
-    if d.month != m:
-        d = datetime(y, m, cal.monthrange(y, m)[1])
-        while d.weekday() >= 5: d -= timedelta(days=1)
-    return d
-
-def first_fri(y, m):
-    d = datetime(y, m, 1)
-    while d.weekday() != 4: d += timedelta(days=1)
-    return d
-
-def third_fri(y, m):
-    d = datetime(y, m, 15)
-    while d.weekday() != 4: d += timedelta(days=1)
-    return d
-
 def fmt_d(d): return f'{d.month}月{d.day}日'
 
 def generate_macro():
-    """Only the macro events that actually matter for pre-positioning.
-    Dropped: PMI, CPI/PPI, trade, industrial/retail/FAI, M2/credit,
-     industrial profits, 70-city housing, FX reserves — all background noise,
-     nobody pre-positions for a PMI release."""
+    """Only keep sector-specific recurring events that you can actually pre-position for.
+    No FOMC/LPR/MLF/NFP/CPI — nobody buys stocks ahead of a PMI release.
+    Only 章源钨业 monthly quotes survive as truly pre-positionable."""
     cst = datetime.now(timezone.utc) + timedelta(hours=8)
     today = cst.date()
     evs = []
 
-    # ── Only 5 macro events that matter for layout ──
-
-    # 1. FOMC — global asset pricing anchor
-    fomc_url = 'https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm'
-    for y,m,d,t in [
-        (2026,6,17,'6月FOMC+点阵图'),(2026,7,29,'7月FOMC'),
-        (2026,9,16,'9月FOMC'),(2026,11,4,'11月FOMC'),
-        (2026,12,16,'12月FOMC+点阵图')]:
-        fd = datetime(y,m,d)
-        evs.append({'d':fmt_d(fd),'icon':'🏛️','e':t,'s':MACRO_S,'big':1,
-            'desc':'全球资产定价锚——利率决议+点阵图决定全年降息路径',
-            'u':fomc_url})
-
-    # 2. LPR — mortgage rate benchmark (monthly)
-    lpr_url = 'http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/index.html'
-    for off in range(4):
-        m, y = cst.month + off, cst.year
-        if m > 12: m -= 12; y += 1
-        lpr = next_biz(y, m, 20)
-        evs.append({'d':fmt_d(lpr),'icon':'🏦','e':f'{m}月LPR报价','s':MACRO_S,
-            'big':1,'desc':'房贷利率基准，降息=直接利好地产+银行+成长股估值扩张',
-            'u':lpr_url})
-
-    # 3. MLF — PBOC medium-term rate signal (monthly)
-    mlf_url = 'http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125428/index.html'
-    for off in range(4):
-        m, y = cst.month + off, cst.year
-        if m > 12: m -= 12; y += 1
-        mlf = next_biz(y, m, 15)
-        evs.append({'d':fmt_d(mlf),'icon':'🏦','e':f'{m}月MLF操作','s':MACRO_S,
-            'big':1,'desc':'央行中期利率指引，降息信号=政策转向宽松，利好A股整体估值',
-            'u':mlf_url})
-
-    # 4. US Non-farm — global risk appetite (monthly)
-    nfp_url = 'https://www.bls.gov/news.release/empsit.nr0.htm'
-    for off in range(4):
-        m, y = cst.month + off, cst.year
-        if m > 12: m -= 12; y += 1
-        nfp = first_fri(y, m)
-        evs.append({'d':fmt_d(nfp),'icon':'🇺🇸','e':f'{m}月美国非农就业','s':MACRO_S,
-            'big':1,'desc':'全球最重要月度数据，影响美联储降息预期→美债利率→A股科技成长风格',
-            'u':nfp_url})
-
-    # 5. US CPI — inflation → rate cut expectation (monthly)
-    cpi_url = 'https://www.bls.gov/news.release/cpi.nr0.htm'
-    for off in range(4):
-        m, y = cst.month + off, cst.year
-        if m > 12: m -= 12; y += 1
-        us_cpi = next_biz(y, m, 12)
-        evs.append({'d':fmt_d(us_cpi),'icon':'🇺🇸','e':f'{m}月美国CPI','s':MACRO_S,
-            'big':1,'desc':'通胀数据→降息预期→美债利率→科技股估值',
-            'u':cpi_url})
-
-    # ── Recurring sector-specific events (not macro noise) ──
-
-    # 股指期货交割 — risk management, useful to know
-    ex_url = 'http://www.cffex.com.cn/jysj/yysj/'
-    for off in range(4):
-        m, y = cst.month + off, cst.year
-        if m > 12: m -= 12; y += 1
-        ex = third_fri(y, m)
-        evs.append({'d':fmt_d(ex),'icon':'📅','e':f'{m}月股指期货交割日','s':MACRO_S,
-            'big':0,'desc':'交割日市场波动可能加大，注意仓位管理',
-            'u':ex_url})
-
-    # 章源钨业长单报价 — real sector catalyst
+    # Only one recurring event that matters for pre-positioning
     zyw_url = 'https://quote.eastmoney.com/sz002842.html'
     for off in range(4):
         m, y = cst.month + off, cst.year
         if m > 12: m -= 12; y += 1
-        for day, lb in [(1,'上'),(15,'下')]:
-            if day <= cal.monthrange(y,m)[1]:
+        for day, lb in [(1, '上半月'), (15, '下半月')]:
+            if day <= cal.monthrange(y, m)[1]:
                 qd = next_biz(y, m, day)
                 if qd.month == m:
-                    evs.append({'d':fmt_d(qd),'icon':'💰',
-                        'e':f'章源钨业{m}月{lb}半月长单报价','s':'钨/稀土',
-                        'big':1,'desc':'每半月钨精矿定价催化',
-                        'u':zyw_url})
+                    evs.append({'d': fmt_d(qd), 'icon': '💰',
+                        'e': f'章源钨业{m}月{lb}长单报价', 's': '钨/稀土',
+                        'big': 1,
+                        'desc': f'{m}月{lb}钨精矿定价催化，提前布局钨矿股',
+                        'u': zyw_url})
 
-    seen = set(); deduped = []
+    seen = set()
+    deduped = []
     for e in evs:
-        k = (e['d'],e['e'])
-        if k not in seen: seen.add(k); deduped.append(e)
+        k = (e['d'], e['e'])
+        if k not in seen:
+            seen.add(k)
+            deduped.append(e)
+
     def pd(e):
-        m=re.search(r'(\d+)月(\d+)日',e['d'])
-        return (int(m.group(1)),int(m.group(2))) if m else (99,99)
+        m = re.search(r'(\d+)月(\d+)日', e['d'])
+        return (int(m.group(1)), int(m.group(2))) if m else (99, 99)
     deduped.sort(key=pd)
     return deduped
 
@@ -171,7 +92,7 @@ def main():
     existing = data.get('events', [])
 
     # Separate: hand (has URL AND not macro) vs macro vs AI (no URL) vs new AI (with URL, not macro, not hand)
-    macro_patterns = ['FOMC','LPR报价','MLF操作','美国非农','美国CPI','股指期货交割','章源钨业长单']
+    macro_patterns = ['章源钨业']
 
     hand_evs = [e for e in existing if e.get('u','').strip()
         and not any(kw in e.get('e','') for kw in macro_patterns)]
@@ -204,8 +125,22 @@ def main():
     all_keys = {(e['d'], e['e']) for e in merged}
     for ev in ai_evs:
         k = (ev.get('d',''), ev.get('e',''))
-        if k not in all_keys:
-            merged.append(ev)
+        # Drop old macro noise (LPR/MLF/FOMC/NFP/CPI etc.) — sector=宏观/全部 but NOT 章源钨业
+        if k in all_keys:
+            continue
+        if ev.get('s') == MACRO_S and '章源钨业' not in ev.get('e', ''):
+            continue  # macro noise, dropped
+        merged.append(ev)
+
+    # Purge ALL macro noise from merged list
+    # Any event with sector=宏观/全部 that is NOT 章源钨业 gets deleted
+    # (catches FOMC/LPR/MLF/NFP/CPI/交割日 regardless of classification)
+    echo_count_before = len(merged)
+    merged = [e for e in merged
+              if e.get('s') != MACRO_S or '章源钨业' in e.get('e', '')]
+    dropped = echo_count_before - len(merged)
+    if dropped > 0:
+        print(f'Purged {dropped} macro noise events (FOMC/LPR/MLF/NFP/CPI/etc)')
 
     # ── URL enrichment: generate links for events missing them ──
     for ev in merged:

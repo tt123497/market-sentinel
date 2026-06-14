@@ -2993,53 +2993,8 @@
       "e": "章源钨业6月上半月长单报价",
       "s": "钨/稀土",
       "big": 1,
-      "desc": "每半月钨精矿定价催化",
+      "desc": "6月上半月钨精矿定价催化，提前布局钨矿股",
       "u": "https://quote.eastmoney.com/sz002842.html"
-    },
-    {
-      "d": "6月5日",
-      "icon": "🇺🇸",
-      "e": "6月美国非农就业",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球最重要月度数据，影响美联储降息预期→美债利率→A股科技成长风格",
-      "u": "https://www.bls.gov/news.release/empsit.nr0.htm"
-    },
-    {
-      "d": "6月8日",
-      "icon": "🚢",
-      "e": "6月进出口数据发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "出口增速影响制造业/港口航运/电子产业链",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "6月8日",
-      "icon": "💱",
-      "e": "6月外汇储备发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "汇率预期影响外资流向",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "6月9日",
-      "icon": "💰",
-      "e": "6月CPI/PPI发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "通胀影响货币政策预期，PPI影响上游资源品定价",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "6月11日",
-      "icon": "💳",
-      "e": "6月M2/社融/贷款发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "流动性指标决定市场风格切换",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
     },
     {
       "d": "6月12日",
@@ -3069,49 +3024,13 @@
       "u": "https://2026.baai.ac.cn/"
     },
     {
-      "d": "6月12日",
-      "icon": "🇺🇸",
-      "e": "6月美国CPI",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "通胀数据→降息预期→美债利率→科技股估值",
-      "u": "https://www.bls.gov/news.release/cpi.nr0.htm"
-    },
-    {
-      "d": "6月15日",
-      "icon": "🏦",
-      "e": "6月MLF操作",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "央行中期利率指引，降息信号=政策转向宽松，利好A股整体估值",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125428/index.html"
-    },
-    {
       "d": "6月15日",
       "icon": "💰",
       "e": "章源钨业6月下半月长单报价",
       "s": "钨/稀土",
       "big": 1,
-      "desc": "每半月钨精矿定价催化",
+      "desc": "6月下半月钨精矿定价催化，提前布局钨矿股",
       "u": "https://quote.eastmoney.com/sz002842.html"
-    },
-    {
-      "d": "6月15日",
-      "icon": "🏭",
-      "e": "6月工业/社零/固投发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "经济三驾马车月度成绩单",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "6月15日",
-      "icon": "💰",
-      "e": "章源钨业6月上半月长单报价",
-      "s": "钨/稀土",
-      "big": 1,
-      "desc": "每半月定期催化,观察钨精矿涨幅趋势",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E9%92%A8"
     },
     {
       "d": "6月16日",
@@ -3121,15 +3040,6 @@
       "big": 0,
       "desc": "50国4000人参会,卫星通信/地球观测/太空政策",
       "u": "https://www.yna.co.kr/view/AKR20260611052900063"
-    },
-    {
-      "d": "6月16日",
-      "icon": "🏠",
-      "e": "6月70城房价发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "地产链景气温度计",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
     },
     {
       "d": "6月16日",
@@ -3159,15 +3069,6 @@
       "u": "http://www.hbgrb.net/hbxw/202606/t20260611_369815.html"
     },
     {
-      "d": "6月17日",
-      "icon": "🏛️",
-      "e": "6月FOMC+点阵图",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球资产定价锚——利率决议+点阵图决定全年降息路径",
-      "u": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    },
-    {
       "d": "6月18日",
       "icon": "📊",
       "e": "5月半导体销售额数据发布(SIA)",
@@ -3177,15 +3078,6 @@
       "u": "https://so.eastmoney.com/news/s?keyword=%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%85%A8%E9%93%BE"
     },
     {
-      "d": "6月19日",
-      "icon": "📅",
-      "e": "6月股指期货交割日",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "交割日市场波动可能加大，注意仓位管理",
-      "u": "http://www.cffex.com.cn/jysj/yysj/"
-    },
-    {
       "d": "6月20日",
       "icon": "🟧",
       "e": "三星电机MLCC长单报价更新",
@@ -3193,15 +3085,6 @@
       "big": 1,
       "desc": "观察村田涨后三星是否跟进调价,板块价格催化",
       "u": "https://so.eastmoney.com/news/s?keyword=MLCC"
-    },
-    {
-      "d": "6月22日",
-      "icon": "🏦",
-      "e": "6月LPR报价",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "房贷利率基准，降息=直接利好地产+银行+成长股估值扩张",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/index.html"
     },
     {
       "d": "6月24日",
@@ -3240,24 +3123,6 @@
       "u": "https://wap.stockstar.com/detail/IG2026060700004015"
     },
     {
-      "d": "6月29日",
-      "icon": "💼",
-      "e": "5月工业企业利润发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "上市公司业绩先行指标",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "6月30日",
-      "icon": "📊",
-      "e": "6月PMI发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "制造业景气度风向标，新订单/出口订单验证经济动能",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
       "d": "6月30日",
       "icon": "🏭",
       "e": "中国智算产业生态年会",
@@ -3274,15 +3139,6 @@
       "big": 1,
       "desc": "飞行审批7天→1小时,产业落地加速",
       "u": "https://news.cctv.com/2026/06/08/ARTI0HlMBNQ6CE8Ji2a32otp260608.shtml"
-    },
-    {
-      "d": "7月1日",
-      "icon": "💰",
-      "e": "章源钨业7月上半月长单报价",
-      "s": "钨/稀土",
-      "big": 1,
-      "desc": "每半月钨精矿定价催化",
-      "u": "https://quote.eastmoney.com/sz002842.html"
     },
     {
       "d": "7月1日",
@@ -3312,6 +3168,15 @@
       "u": "https://so.eastmoney.com/news/s?keyword=%E4%BD%8E%E7%A9%BA%E7%BB%8F%E6%B5%8E"
     },
     {
+      "d": "7月1日",
+      "icon": "💰",
+      "e": "章源钨业7月上半月长单报价",
+      "s": "钨/稀土",
+      "big": 1,
+      "desc": "7月上半月钨精矿定价催化，提前布局钨矿股",
+      "u": "https://quote.eastmoney.com/sz002842.html"
+    },
+    {
       "d": "7月2日",
       "icon": "🌐",
       "e": "全球数字经济大会(北京)",
@@ -3328,15 +3193,6 @@
       "big": 0,
       "desc": "Coding Agent/多智能体协同",
       "u": "https://so.eastmoney.com/news/s?keyword=AI%E5%BA%94%E7%94%A8"
-    },
-    {
-      "d": "7月3日",
-      "icon": "🇺🇸",
-      "e": "7月美国非农就业",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球最重要月度数据，影响美联储降息预期→美债利率→A股科技成长风格",
-      "u": "https://www.bls.gov/news.release/empsit.nr0.htm"
     },
     {
       "d": "7月5日",
@@ -3366,24 +3222,6 @@
       "u": "http://mp.weixin.qq.com/s?__biz=MjM5MjIwNDA5MA==&mid=2648022748&idx=1"
     },
     {
-      "d": "7月7日",
-      "icon": "🚢",
-      "e": "7月进出口数据发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "出口增速影响制造业/港口航运/电子产业链",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "7月7日",
-      "icon": "💱",
-      "e": "7月外汇储备发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "汇率预期影响外资流向",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
       "d": "7月8日",
       "icon": "🌐",
       "e": "中国互联网大会(北京)",
@@ -3411,15 +3249,6 @@
       "u": "https://so.eastmoney.com/news/s?keyword=%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA"
     },
     {
-      "d": "7月9日",
-      "icon": "💰",
-      "e": "7月CPI/PPI发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "通胀影响货币政策预期，PPI影响上游资源品定价",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
       "d": "7月11日",
       "icon": "🤖",
       "e": "机器人+创新发展大会(邹城)",
@@ -3429,67 +3258,13 @@
       "u": "https://so.eastmoney.com/news/s?keyword=%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA"
     },
     {
-      "d": "7月13日",
-      "icon": "🇺🇸",
-      "e": "7月美国CPI",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "通胀数据→降息预期→美债利率→科技股估值",
-      "u": "https://www.bls.gov/news.release/cpi.nr0.htm"
-    },
-    {
-      "d": "7月13日",
-      "icon": "💳",
-      "e": "7月M2/社融/贷款发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "流动性指标决定市场风格切换",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "7月15日",
-      "icon": "🏦",
-      "e": "7月MLF操作",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "央行中期利率指引，降息信号=政策转向宽松，利好A股整体估值",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125428/index.html"
-    },
-    {
       "d": "7月15日",
       "icon": "💰",
       "e": "章源钨业7月下半月长单报价",
       "s": "钨/稀土",
       "big": 1,
-      "desc": "每半月钨精矿定价催化",
+      "desc": "7月下半月钨精矿定价催化，提前布局钨矿股",
       "u": "https://quote.eastmoney.com/sz002842.html"
-    },
-    {
-      "d": "7月15日",
-      "icon": "🏭",
-      "e": "7月工业/社零/固投发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "经济三驾马车月度成绩单",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "7月16日",
-      "icon": "🏠",
-      "e": "7月70城房价发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "地产链景气温度计",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "7月17日",
-      "icon": "📅",
-      "e": "7月股指期货交割日",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "交割日市场波动可能加大，注意仓位管理",
-      "u": "http://www.cffex.com.cn/jysj/yysj/"
     },
     {
       "d": "7月17日",
@@ -3501,57 +3276,12 @@
       "u": "https://so.eastmoney.com/news/s?keyword=AI"
     },
     {
-      "d": "7月20日",
-      "icon": "🏦",
-      "e": "7月LPR报价",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "房贷利率基准，降息=直接利好地产+银行+成长股估值扩张",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/index.html"
-    },
-    {
-      "d": "7月27日",
-      "icon": "💼",
-      "e": "6月工业企业利润发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "上市公司业绩先行指标",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "7月29日",
-      "icon": "🏛️",
-      "e": "7月FOMC",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球资产定价锚——利率决议+点阵图决定全年降息路径",
-      "u": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    },
-    {
-      "d": "7月30日",
-      "icon": "💰",
-      "e": "章源钨业7月下半月长单报价",
-      "s": "钨/稀土",
-      "big": 1,
-      "desc": "日本停产一个月后钨价走势,验证涨幅持续性",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E9%92%A8"
-    },
-    {
-      "d": "7月31日",
-      "icon": "📊",
-      "e": "7月PMI发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "制造业景气度风向标，新订单/出口订单验证经济动能",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
       "d": "8月3日",
       "icon": "💰",
       "e": "章源钨业8月上半月长单报价",
       "s": "钨/稀土",
       "big": 1,
-      "desc": "每半月钨精矿定价催化",
+      "desc": "8月上半月钨精矿定价催化，提前布局钨矿股",
       "u": "https://quote.eastmoney.com/sz002842.html"
     },
     {
@@ -3564,60 +3294,6 @@
       "u": "https://so.eastmoney.com/news/s?keyword=%E5%85%A8%E9%83%A8%E8%B5%9B%E9%81%93"
     },
     {
-      "d": "8月7日",
-      "icon": "🇺🇸",
-      "e": "8月美国非农就业",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球最重要月度数据，影响美联储降息预期→美债利率→A股科技成长风格",
-      "u": "https://www.bls.gov/news.release/empsit.nr0.htm"
-    },
-    {
-      "d": "8月7日",
-      "icon": "🚢",
-      "e": "8月进出口数据发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "出口增速影响制造业/港口航运/电子产业链",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "8月7日",
-      "icon": "💱",
-      "e": "8月外汇储备发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "汇率预期影响外资流向",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "8月10日",
-      "icon": "💰",
-      "e": "8月CPI/PPI发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "通胀影响货币政策预期，PPI影响上游资源品定价",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "8月11日",
-      "icon": "💳",
-      "e": "8月M2/社融/贷款发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "流动性指标决定市场风格切换",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "8月12日",
-      "icon": "🇺🇸",
-      "e": "8月美国CPI",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "通胀数据→降息预期→美债利率→科技股估值",
-      "u": "https://www.bls.gov/news.release/cpi.nr0.htm"
-    },
-    {
       "d": "8月中旬",
       "icon": "💾",
       "e": "SK海力士HBM4试产进度更新",
@@ -3628,39 +3304,12 @@
     },
     {
       "d": "8月17日",
-      "icon": "🏦",
-      "e": "8月MLF操作",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "央行中期利率指引，降息信号=政策转向宽松，利好A股整体估值",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125428/index.html"
-    },
-    {
-      "d": "8月17日",
       "icon": "💰",
       "e": "章源钨业8月下半月长单报价",
       "s": "钨/稀土",
       "big": 1,
-      "desc": "每半月钨精矿定价催化",
+      "desc": "8月下半月钨精矿定价催化，提前布局钨矿股",
       "u": "https://quote.eastmoney.com/sz002842.html"
-    },
-    {
-      "d": "8月17日",
-      "icon": "🏭",
-      "e": "8月工业/社零/固投发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "经济三驾马车月度成绩单",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "8月17日",
-      "icon": "🏠",
-      "e": "8月70城房价发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "地产链景气温度计",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
     },
     {
       "d": "8月20日",
@@ -3672,24 +3321,6 @@
       "u": "https://wap.stockstar.com/detail/IG2026060700004015"
     },
     {
-      "d": "8月20日",
-      "icon": "🏦",
-      "e": "8月LPR报价",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "房贷利率基准，降息=直接利好地产+银行+成长股估值扩张",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/index.html"
-    },
-    {
-      "d": "8月21日",
-      "icon": "📅",
-      "e": "8月股指期货交割日",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "交割日市场波动可能加大，注意仓位管理",
-      "u": "http://www.cffex.com.cn/jysj/yysj/"
-    },
-    {
       "d": "8月26日",
       "icon": "🤖",
       "e": "AGIC深圳国际通用AI大会(最大AI展)",
@@ -3699,94 +3330,13 @@
       "u": "https://so.eastmoney.com/news/s?keyword=AI"
     },
     {
-      "d": "8月27日",
-      "icon": "💼",
-      "e": "7月工业企业利润发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "上市公司业绩先行指标",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "8月31日",
-      "icon": "📊",
-      "e": "8月PMI发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "制造业景气度风向标，新订单/出口订单验证经济动能",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
       "d": "9月1日",
       "icon": "💰",
       "e": "章源钨业9月上半月长单报价",
       "s": "钨/稀土",
       "big": 1,
-      "desc": "每半月钨精矿定价催化",
+      "desc": "9月上半月钨精矿定价催化，提前布局钨矿股",
       "u": "https://quote.eastmoney.com/sz002842.html"
-    },
-    {
-      "d": "9月4日",
-      "icon": "🇺🇸",
-      "e": "9月美国非农就业",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球最重要月度数据，影响美联储降息预期→美债利率→A股科技成长风格",
-      "u": "https://www.bls.gov/news.release/empsit.nr0.htm"
-    },
-    {
-      "d": "9月7日",
-      "icon": "🚢",
-      "e": "9月进出口数据发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "出口增速影响制造业/港口航运/电子产业链",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "9月7日",
-      "icon": "💱",
-      "e": "9月外汇储备发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "汇率预期影响外资流向",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "9月9日",
-      "icon": "💰",
-      "e": "9月CPI/PPI发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "通胀影响货币政策预期，PPI影响上游资源品定价",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "9月11日",
-      "icon": "💳",
-      "e": "9月M2/社融/贷款发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "流动性指标决定市场风格切换",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "9月14日",
-      "icon": "🇺🇸",
-      "e": "9月美国CPI",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "通胀数据→降息预期→美债利率→科技股估值",
-      "u": "https://www.bls.gov/news.release/cpi.nr0.htm"
-    },
-    {
-      "d": "9月15日",
-      "icon": "🏦",
-      "e": "9月MLF操作",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "央行中期利率指引，降息信号=政策转向宽松，利好A股整体估值",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125428/index.html"
     },
     {
       "d": "9月15日",
@@ -3794,89 +3344,8 @@
       "e": "章源钨业9月下半月长单报价",
       "s": "钨/稀土",
       "big": 1,
-      "desc": "每半月钨精矿定价催化",
+      "desc": "9月下半月钨精矿定价催化，提前布局钨矿股",
       "u": "https://quote.eastmoney.com/sz002842.html"
-    },
-    {
-      "d": "9月15日",
-      "icon": "🏭",
-      "e": "9月工业/社零/固投发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "经济三驾马车月度成绩单",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "9月16日",
-      "icon": "🏛️",
-      "e": "9月FOMC",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球资产定价锚——利率决议+点阵图决定全年降息路径",
-      "u": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    },
-    {
-      "d": "9月16日",
-      "icon": "🏠",
-      "e": "9月70城房价发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "地产链景气温度计",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "9月18日",
-      "icon": "📅",
-      "e": "9月股指期货交割日",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "交割日市场波动可能加大，注意仓位管理",
-      "u": "http://www.cffex.com.cn/jysj/yysj/"
-    },
-    {
-      "d": "9月21日",
-      "icon": "🏦",
-      "e": "9月LPR报价",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "房贷利率基准，降息=直接利好地产+银行+成长股估值扩张",
-      "u": "http://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/index.html"
-    },
-    {
-      "d": "9月28日",
-      "icon": "💼",
-      "e": "8月工业企业利润发布",
-      "s": "宏观/全部",
-      "big": 0,
-      "desc": "上市公司业绩先行指标",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "9月30日",
-      "icon": "📊",
-      "e": "9月PMI发布",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "制造业景气度风向标，新订单/出口订单验证经济动能",
-      "u": "https://so.eastmoney.com/news/s?keyword=%E5%AE%8F%E8%A7%82"
-    },
-    {
-      "d": "11月4日",
-      "icon": "🏛️",
-      "e": "11月FOMC",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球资产定价锚——利率决议+点阵图决定全年降息路径",
-      "u": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    },
-    {
-      "d": "12月16日",
-      "icon": "🏛️",
-      "e": "12月FOMC+点阵图",
-      "s": "宏观/全部",
-      "big": 1,
-      "desc": "全球资产定价锚——利率决议+点阵图决定全年降息路径",
-      "u": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
     }
   ],
   "layout": [
@@ -7249,11 +6718,11 @@
     "钨稀土": "🟡 平盘 | 稀土永磁涨2.7%，小金属概念涨3.3%，资"
   },
   "_eventsMeta": {
-    "updated": "2026-06-14 23:16 CST",
-    "total": 99,
-    "hand": 13,
-    "macro": 33,
-    "ai": 61,
+    "updated": "2026-06-14 23:33 CST",
+    "total": 40,
+    "hand": 89,
+    "macro": 8,
+    "ai": 0,
     "schedule": "daily at 10:00 CST",
     "source": "NBS 2026 schedule + AI sentinel news + hand-curated"
   }
